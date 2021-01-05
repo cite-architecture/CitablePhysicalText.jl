@@ -29,15 +29,13 @@ version = "1.1.0"
 
 [[CitableObject]]
 deps = ["CitableBase", "DocStringExtensions", "Documenter", "Test"]
-git-tree-sha1 = "e12a247b4ede1f819ed06f3bc4d73293989f8424"
+git-tree-sha1 = "292648bb72c1dff248a99e5e8445570380f251df"
 uuid = "e2b2f5ea-1cd8-4ce8-9b2b-05dad64c2a57"
-version = "0.1.0"
+version = "0.1.1"
 
 [[CitableText]]
 deps = ["CSV", "CitableBase", "DataFrames", "DocStringExtensions", "Documenter", "HTTP", "Test"]
-git-tree-sha1 = "3c5d456ecb159d387fd43c2f7359049023e8fe7b"
-repo-rev = "main"
-repo-url = "https://github.com/cite-architecture/CitableText.jl"
+git-tree-sha1 = "9821bc68e1be47a0836788173a92dd93f1d6c56a"
 uuid = "41e66566-473b-49d4-85b7-da83b66615d8"
 version = "0.2.0"
 
