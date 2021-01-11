@@ -2,9 +2,13 @@ module CitablePhysicalText
 
 using CitableText, CitableObject
 using Documenter, DocStringExtensions
+using DataFrames
 
 export DSETriple
 export fromcex
+
+include("dfs.jl")
+
 
 "Citable relations of text passage, text-bearing surface and documentary image."
 struct DSETriple
