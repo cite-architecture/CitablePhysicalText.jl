@@ -1,7 +1,6 @@
-# Run this from repository root, e.g. with
-# 
-#    julia --project=docs/ docs/make.jl
-#
+# Use this from root directory of repository, e.g.,
+# julia --project=docs/ docs/make.jl
+
 using Pkg
 Pkg.activate(".")
 Pkg.instantiate()
@@ -9,4 +8,13 @@ Pkg.instantiate()
 
 using Documenter, DocStringExtensions, CitablePhysicalText
 
-makedocs(sitename = "CitablePhysicalText Documentation")
+makedocs(
+    sitename = "CitableText Documentation",
+    pages = [
+        "Home" => "index.md"       
+    ]
+    )
+
+deploydocs(
+    repo = "github.com/cite-architecture/CitablePhysicalText.jl.git",
+) 
