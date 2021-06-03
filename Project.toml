@@ -1,7 +1,7 @@
 name = "CitablePhysicalText"
 uuid = "e38a874e-a7c2-4ff3-8dea-81ae2e5c9b07"
 authors = ["nsmith "]
-version = "0.2.4"
+version = "0.2.5"
 
 [deps]
 CitableObject = "e2b2f5ea-1cd8-4ce8-9b2b-05dad64c2a57"
@@ -12,7 +12,7 @@ Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
-CitableObject = "0.2, 0.3"
+CitableObject = "0.2, 0.3, 0.4"
 CitableText = "0.3, 0.4, 0.5, 0.6, 0.7"
 DataFrames = "0.22, 1.0"
 DocStringExtensions = "0.8"
