@@ -1,11 +1,13 @@
 name = "CitablePhysicalText"
 uuid = "e38a874e-a7c2-4ff3-8dea-81ae2e5c9b07"
 authors = ["nsmith "]
-version = "0.2.7"
+version = "0.3.0"
 
 [deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 CitableObject = "e2b2f5ea-1cd8-4ce8-9b2b-05dad64c2a57"
 CitableText = "41e66566-473b-49d4-85b7-da83b66615d8"
+CiteEXchange = "e2e9ead3-1b6c-4e96-b95f-43e6ab899178"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"

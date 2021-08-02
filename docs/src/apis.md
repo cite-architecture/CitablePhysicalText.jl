@@ -2,15 +2,15 @@
 ```@meta
 CurrentModule = CitablePhysicalText
 ```
-```@contents
-```
+
 ## Types
 ```@docs
 DSETriple
 ```
 ## Functions
 ```@docs
+df
+fromcex
+vecvectodf
 ```
-## Index
-```@index
-```
+
