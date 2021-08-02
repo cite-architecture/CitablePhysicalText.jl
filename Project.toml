@@ -16,6 +16,8 @@ Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 [compat]
 CitableObject = "0.2, 0.3, 0.4, 0.5, 0.6"
 CitableText = "0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9"
+CiteEXchange = "0.4"
+CSV = "0.8"
 DataFrames = "0.22, 1.0"
 DocStringExtensions = "0.8"
 Documenter = "0.26"
