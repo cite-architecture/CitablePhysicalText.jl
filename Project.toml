@@ -14,7 +14,7 @@ Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
-CSV = "0.8"
+CSV = "0.8, 0.9"
 CitableObject = "0.2, 0.3, 0.4, 0.5, 0.6"
 CitableText = "0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9"
 CiteEXchange = "0.4"
