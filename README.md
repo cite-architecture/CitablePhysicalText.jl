@@ -1,3 +1,6 @@
+![build](https://github.com/cite-architecture/CitablePhysicalText.jl/actions/workflows/Documentation.yml/badge.svg)
+
+
 # CitablePhysicalText.jl
 
 A julia module for working with digital scholarly editions following the DSE model associating:
