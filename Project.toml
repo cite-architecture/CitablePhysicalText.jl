@@ -1,10 +1,11 @@
 name = "CitablePhysicalText"
 uuid = "e38a874e-a7c2-4ff3-8dea-81ae2e5c9b07"
 authors = ["nsmith "]
-version = "0.3.3"
+version = "0.4.0"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+CitableBase = "d6f014bd-995c-41bd-9893-703339864534"
 CitableObject = "e2b2f5ea-1cd8-4ce8-9b2b-05dad64c2a57"
 CitableText = "41e66566-473b-49d4-85b7-da83b66615d8"
 CiteEXchange = "e2e9ead3-1b6c-4e96-b95f-43e6ab899178"
