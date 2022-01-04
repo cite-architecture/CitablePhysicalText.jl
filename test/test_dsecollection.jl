@@ -10,5 +10,8 @@
     coll = DSECollection(urn, label, triplelist)
 
     @test coll isa DSECollection
+    @test citable(coll)
+    @test urn(coll) == Cite2Urn("urn:cite2:hmt:dse.v1:msBil4")
+    @test label(coll) == "Collection of DSE records for Venetus A text of Proclus, Chrestomathy"
 
 end
