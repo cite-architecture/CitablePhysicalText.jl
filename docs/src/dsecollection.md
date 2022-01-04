@@ -54,13 +54,22 @@ label(coll)
 
 ### URN comparison
 
-`DSECollection`s can be compared using URN logic, as you can see with the `urncomparable` function.
-
+`DSECollection`s can be compared using URN logic.
 
 ```@example coll
 dupe = coll
 urnequals(coll, dupe)
 ```
 
+Since a `DSECollection` should be uniquely identified, however, it is more likely that you'll want to compare a URN to the `DSECollection`'s URN.
+
+```@example coll
+common = dropobject(dseurn)
+urncontains(common, urn(coll))
+```
+
+```@example coll
+urnsimilar(common, urn(coll))
+```
 
 ### CEX serialization
