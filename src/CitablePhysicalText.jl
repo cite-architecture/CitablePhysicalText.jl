@@ -11,7 +11,10 @@ using DataFrames, CSV
 
 
 export DSETriple
+export triple, passage, image, surface
 
+
+export DSECollection
 
 #export fromcex, df, vecvectodf
 
