@@ -38,3 +38,27 @@ end
 function label(dsec::DSECollection)
     dsec.label
 end
+
+
+struct ComparableDSECollection <: UrnComparisonTrait end
+
+function urncomparisontrait(::Type{DSECollection})
+    ComparableDSECollection()
+end
+
+
+function urnequals(dse1::DSECollection, dse2::DSECollection)
+    dse1.urn == dse2.urn
+end
+function urncontains(dse1::DSECollection, dse2::DSECollection)
+    urncontains(dse1.urn, dse2.urn)
+end
+function urnsimilar(dse1::DSECollection, dse2::DSECollection)
+    urnsimilar(dse1.urn, dse2.urn)
+end
+
+
+struct DSECex <: CexTrait end
+function cextrait(::Type{DSECollection})
+    DSECex()
+end

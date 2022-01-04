@@ -23,9 +23,44 @@ Alternatively, you can construct a `DSECollection` directly from a CEX source (a
 
 ## A citable object
 
-The `DSECollection` is a citable object, as you can verify with the `citable` function from `CitableBase`.
+The `DSECollection` is a citable object, and therefore fufills traits for *citation*, *comparison using URN logic*, and *CEX serialization*, as you can verify with these functions from `CitableBase`.
 
 ```@example coll
 using CitableBase
 citable(coll)
 ```
+
+```@example coll
+urncomparable(coll)
+```
+
+```@example coll
+cexserializable(coll)
+```
+
+
+
+### Citation
+
+You can therefore apply the `urn` and `label` functions of `CitableBase` to it.
+
+```@example coll
+urn(coll)
+```
+
+```@example coll
+label(coll)
+```
+
+### URN comparison
+
+`DSECollection`s can be compared using URN logic, as you can see with the `urncomparable` function.
+
+
+```@example coll
+dupe = coll
+urnequals(coll, dupe)
+```
+
+
+### CEX serialization
