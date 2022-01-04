@@ -19,6 +19,20 @@ function triple(src::AbstractString; delimiter = "|")
 end
 
 
+"""Compose a Vector of `DSETriple`s from delimited-text source.
+$(SIGNATURES)
+"""
+function triples(src::AbstractString; delimiter = "|")
+   triplelist = DSETriple[]   
+   lines = split(src, "\n")
+   nonempty = filter(ln -> ! isempty(ln), lines)
+   for ln in nonempty
+    push!(triplelist, triple(ln, delimiter = delimiter))
+   end
+   triplelist
+end
+
+
 """Return `passage` field of `trip`.
 $(SIGNATURES)
 """
