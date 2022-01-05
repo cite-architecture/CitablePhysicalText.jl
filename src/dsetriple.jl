@@ -6,6 +6,15 @@ struct DSETriple
     surface::Cite2Urn
 end
 
+
+"""Override `==` for `DSETriple`
+$(SIGNATURES)
+"""
+function ==(dse1::DSETriple, dse2::DSETriple)
+    dse1.passage.urn == dse2.passage.urn && dse1.image.urn == dse2.image.urn && dse1.surface.urn == dse2.surface.urn
+end
+
+
 """Compose a `DSETriple` from delimited-text source.
 $(SIGNATURES)
 """

@@ -1,5 +1,8 @@
 module CitablePhysicalText
 
+import Base: ==
+import Base: show
+
 using CitableBase
 import CitableBase: citabletrait
 import CitableBase: urn

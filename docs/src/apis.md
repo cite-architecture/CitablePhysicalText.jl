@@ -1,4 +1,12 @@
 # API documentation
 
-TBA
+```@docs
+DSETriple
+triple
+triples 
+passage
+image
+surface
+DSECollection
+```
 
