@@ -73,3 +73,14 @@ urnsimilar(common, urn(coll))
 ```
 
 ### CEX serialization
+
+
+
+```@example coll
+collcex = cex(coll)
+```
+
+
+```@example coll
+fromcex(collcex, DSECollection) == coll
+```
