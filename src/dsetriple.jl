@@ -54,3 +54,13 @@ $(SIGNATURES)
 function surface(trip::DSETriple)
     trip.surface
 end
+
+"""Format `trip` as delimited text.
+$(SIGNATURES)
+"""
+function delimited(trip::DSETriple; delimiter = "|")
+    join(
+        [trip.passage.urn, trip.image.urn, trip.surface.urn],
+        delimiter
+    )
+end

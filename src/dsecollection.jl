@@ -62,3 +62,15 @@ struct DSECex <: CexTrait end
 function cextrait(::Type{DSECollection})
     DSECex()
 end
+
+function cex(dsec::DSECollection; delimiter = "|")
+    lines = ["#!citerelationset",
+        "urn$(delimiter)$(urn(dsec))",
+        "label$(delimiter)$(label(dsec))",
+        "passage$(delimiter)imageroi$(delimiter)surface"
+    ]
+    for dsetriple in dsec.data
+        push!(lines, delimited(dsetriple, delimiter = delimiter))
+    end
+    join(lines, "\n")
+end
