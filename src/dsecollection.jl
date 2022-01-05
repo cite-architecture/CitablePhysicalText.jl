@@ -74,3 +74,17 @@ function cex(dsec::DSECollection; delimiter = "|")
     end
     join(lines, "\n")
 end
+
+function fromcex(cexsrc::AbstractString, ::Type{DSECollection}; 
+    delimiter = "|", configuration = nothing)
+    (coll_urn, coll_label) = headerinfo(cexsrc, delimiter = delimiter)
+    triplelist = triples(join(data(cexsrc, "citerelationset", delimiter = delimiter), "\n"))
+    DSECollection(coll_urn, coll_label, triplelist)
+end
+
+function headerinfo(cexsrc::AbstractString; delimiter = "|")
+    cexblock = blocks(cexsrc, "citerelationset")[1]
+    urnkv = split(cexblock.lines[1], delimiter)
+    labelkv = split(cexblock.lines[2], delimiter)
+    (Cite2Urn(urnkv[2]), labelkv[2])
+end
