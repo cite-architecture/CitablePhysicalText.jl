@@ -17,6 +17,8 @@ makedocs(
     sitename = "CitableText Documentation",
     pages = [
         "Home" => "index.md",
+        "The DSETriple" => "dsetriple.md",
+        "The DSECollection" => "dsecollection.md",
         "API documentation"   => "apis.md"
     ]
     )

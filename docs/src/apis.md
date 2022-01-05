@@ -1,16 +1,12 @@
-# CitablePhysicalText.jl Documentation
-```@meta
-CurrentModule = CitablePhysicalText
-```
+# API documentation
 
-## Types
 ```@docs
 DSETriple
-```
-## Functions
-```@docs
-df
-fromcex
-vecvectodf
+triple
+triples 
+passage
+image
+surface
+DSECollection
 ```
 

@@ -1,24 +1,41 @@
 module CitablePhysicalText
 
+import Base: ==
+import Base: show
+
+using CitableBase
+import CitableBase: citabletrait
+import CitableBase: urn
+import CitableBase: label
+
+import CitableBase: urncomparisontrait
+import CitableBase: urnequals
+import CitableBase: urncontains
+import CitableBase: urnsimilar
+
+import CitableBase: cextrait
+import CitableBase: cex
+import CitableBase: fromcex
+
 using CitableText, CitableObject
 using CiteEXchange
+
 using Documenter, DocStringExtensions
 using DataFrames, CSV
 
-
 export DSETriple
-export fromcex, df, vecvectodf
+export triple, triples 
+export passage, image, surface
 
-include("cex.jl")
-include("dfs.jl")
+export DSECollection
 
+#export fromcex, df, vecvectodf
 
-"Citable relations of text passage, text-bearing surface and documentary image."
-struct DSETriple
-    passage::CtsUrn
-    image::Cite2Urn
-    surface::Cite2Urn
-end
+include("dsetriple.jl")
+include("dsecollection.jl")
+#include("cex.jl")
+#include("dfs.jl")
+
 
 
 end # module
