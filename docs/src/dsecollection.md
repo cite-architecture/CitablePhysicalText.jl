@@ -19,7 +19,7 @@ triplelist = triples(triplelines)
 coll = DSECollection(dseurn, dselabel, triplelist)
 ```
 
-Alternatively, you can construct a `DSECollection` directly from a CEX source (as illustrated below).
+Alternatively, you can construct a `DSECollection` directly from a CEX source (as illustrated below, and on the following page).
 
 ## A citable object
 
