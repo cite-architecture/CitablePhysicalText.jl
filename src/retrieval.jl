@@ -82,7 +82,7 @@ end
 """Find unique values for passage field of a collection.
 $(SIGNATURES)
 """
-function passages(dse::DSECollection; keepsubref = true)
-    psgs = keepsubref ? map(trip -> passage(trip), dse.data) :  map(trip -> CitableText.dropsubref(passage(trip)), dse.data)
+function passages(dse::DSECollection; keeppassage = true)
+    psgs = keeppassage ? map(trip -> passage(trip), dse.data) :  map(trip -> droppassage(passage(trip)), dse.data)
     unique(u -> string(u), psgs)
 end
