@@ -10,3 +10,13 @@ surface
 DSECollection
 ```
 
+Retrieval:
+
+```@docs
+textsforsurface
+textsforimage
+surfacesfortext
+surfacesforimage
+imagesfortext
+imagesforsurface
+```

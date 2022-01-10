@@ -19,6 +19,7 @@ makedocs(
         "Home" => "index.md",
         "The DSETriple" => "dsetriple.md",
         "The DSECollection" => "dsecollection.md",
+        "Searching DSECollections" => "retrieval.md",
         "API documentation"   => "apis.md"
     ]
     )
