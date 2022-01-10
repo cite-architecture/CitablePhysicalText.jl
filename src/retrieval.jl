@@ -11,18 +11,18 @@ end
 """Find surfaces for text passage(s) identified by URN.
 $(SIGNATURES)
 """
-function surfacesfortext(txt::CtsUrn, dse::DSECollection)
+function surfacesfortext(txt::CtsUrn, dse::DSECollection; keepsubref = true)
     triplelist = filter(trip -> urncontains(txt, passage(trip)), dse.data)
-    matched = map(trip ->  surface(trip), triplelist) 
+    matched = keepsubref ? map(trip ->  surface(trip), triplelist) : map(trip ->  CitableText.dropsubref(surface(trip)), triplelist) 
     unique(u -> string(u), matched)
 end
 
 """Find surfaces for text passage(s) identified by URN.
 $(SIGNATURES)
 """
-function imagesfortext(txt::CtsUrn, dse::DSECollection; dropsubref = false)
+function imagesfortext(txt::CtsUrn, dse::DSECollection; keepsubref = true)
     triplelist = filter(trip -> urncontains(txt, passage(trip)), dse.data)
-    matched = map(trip ->  image(trip), triplelist) 
+    matched = keepsubref ? map(trip ->  image(trip), triplelist) : map(trip ->  dropsubref(passage(trip)), triplelist)
     unique(u -> string(u), matched)
 end
 
@@ -58,4 +58,31 @@ function textsforimage(img::Cite2Urn, dse::DSECollection; keepsubref = true)
     #matched = keepsubref ? map(trip ->  passage(trip), triplelist)  :   map(trip ->  CitableObject.dropsubref(image(trip)), triplelist) 
     matched = map(trip ->  passage(trip), triplelist)
     unique(u -> string(u), matched)
+end
+
+"""Find unique values for surface field of a collection.
+$(SIGNATURES)
+"""
+function surfaces(dse::DSECollection)
+    surfs = map(trip -> surface(trip), dse.data)
+    unique(u -> string(u), surfs)
+end
+
+
+"""Find unique values for image field of a collection.
+$(SIGNATURES)
+"""
+function images(dse::DSECollection; keepsubref = true)
+    imgs = keepsubref ? map(trip -> image(trip), dse.data) :  map(trip -> CitableObject.dropsubref(image(trip)), dse.data)
+    unique(u -> string(u), imgs)
+end
+
+
+
+"""Find unique values for passage field of a collection.
+$(SIGNATURES)
+"""
+function passages(dse::DSECollection; keeppassage = true)
+    psgs = keeppassage ? map(trip -> passage(trip), dse.data) :  map(trip -> droppassage(passage(trip)), dse.data)
+    unique(u -> string(u), psgs)
 end

@@ -12,6 +12,6 @@ A julia module for working with digital scholarly editions following the DSE mod
 
 ## Roadmap to 1.0
 
-- [ ] 0.4.x Fully implement abstraction of citable object from `CitableBase`
-- [ ] 0.5.x Use `CitableImage` to create visualizations of `DSERecord`
-- [ ] 0.6.x Implement basic suite of queries on DSE model
+- [x] 0.4.x Fully implement abstraction of citable object from `CitableBase`
+- [ ] 0.5.x Implement basic suite of queries on DSE model
+- [ ] 0.6.x Use `CitableImage` to create visualizations of `DSERecord`

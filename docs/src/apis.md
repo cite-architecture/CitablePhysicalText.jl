@@ -13,6 +13,9 @@ DSECollection
 Retrieval:
 
 ```@docs
+surfaces
+passages
+images
 textsforsurface
 textsforimage
 surfacesfortext

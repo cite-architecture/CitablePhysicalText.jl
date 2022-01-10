@@ -27,8 +27,6 @@ urn:cts:greekLit:tlg4036.tlg023.va:Homer.19|urn:cite2:hmt:vaimg.2017a:VA001RN_00
 urn:cts:greekLit:tlg4036.tlg023.va:Homer.20@ἀλλὰ-20@ταῦτα[2]|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1401,0.6741,0.4721,0.1121|urn:cite2:hmt:msA.v1:1r
 
 
-
-
 urn:cts:greekLit:tlg4036.tlg023.va:Homer.20@κατ-20@εχώρησα|urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4241,0.2086,0.1024,0.01826|urn:cite2:hmt:msA.v1:1v
 urn:cts:greekLit:tlg4036.tlg023.va:Homer.21|urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4248,0.2015,0.4234,0.04066|urn:cite2:hmt:msA.v1:1v
 urn:cts:greekLit:tlg4036.tlg023.va:Homer.22|urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4178,0.2173,0.4477,0.03900|urn:cite2:hmt:msA.v1:1v
@@ -57,13 +55,15 @@ urn:cts:greekLit:tlg4036.tlg023.va:Homer.41|urn:cite2:hmt:vaimg.2017a:VA001VN_05
 urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.title|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.09556,0.1682,0.4531,0.04073|urn:cite2:hmt:msA.v1:6r
 urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.1|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.06870,0.2066,0.4748,0.04962|urn:cite2:hmt:msA.v1:6r
 urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.2|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.09074,0.2441,0.4635,0.03044|urn:cite2:hmt:msA.v1:6r
-urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.3|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.09259,0.2727,0.2987,0.01515|
-urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.4|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.08722,0.2754,0.4702,0.02502|
-urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.5|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.08074,0.2879,0.4670,0.03169|
+urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.3|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.09259,0.2727,0.2987,0.01515|urn:cite2:hmt:msA.v1:6r
+urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.4|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.08722,0.2754,0.4702,0.02502|urn:cite2:hmt:msA.v1:6r
+urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.5|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.08074,0.2879,0.4670,0.03169|urn:cite2:hmt:msA.v1:6r
 urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.6|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.08907,0.3178,0.4487,0.03267|urn:cite2:hmt:msA.v1:6r
 urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.7|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.07944,0.3325,0.4600,0.04559|urn:cite2:hmt:msA.v1:6r
 urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.8|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.08370,0.3611,0.4743,0.05227|urn:cite2:hmt:msA.v1:6r
 urn:cts:greekLit:tlg4036.tlg023.va:aethiopis.9|urn:cite2:hmt:vaimg.2017a:VA006RN_0007@0.08907,0.3946,0.4630,0.03267|urn:cite2:hmt:msA.v1:6r
+
+
 
 
 
