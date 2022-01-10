@@ -69,13 +69,14 @@ homer = CtsUrn("urn:cts:greekLit:tlg4036.tlg023.va:Homer")
 imagesfortext(homer, dsecoll)
 ```
 
-In this example collection, only one reference image is used per surface. We can see that one-to-one mapping here.
-
+Find surfaces illustrated by an image:
 
 ```@example proclus
 surfacesforimage(img, dsecoll)
 ```
 
+
+Find images illustrating a surface;
 ```@example proclus
 imagesforsurface(page, dsecoll)
 ```
