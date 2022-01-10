@@ -14,4 +14,5 @@ A julia module for working with digital scholarly editions following the DSE mod
 
 - [x] 0.4.x Fully implement abstraction of citable object from `CitableBase`
 - [x] 0.5.x Implement basic suite of queries on DSE model
-- [ ] 0.6.x Use `CitableImage` to create visualizations of `DSERecord`
+- [x] 0.6.x Add functions to find unique sets of URNs for field of triples in a collection
+- [ ] 0.7.x Use `CitableImage` to create visualizations of `DSERecord`
