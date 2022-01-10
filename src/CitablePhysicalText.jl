@@ -29,10 +29,15 @@ export passage, image, surface
 
 export DSECollection
 
-#export fromcex, df, vecvectodf
+export textsforsurface, textsforimage
+export surfacesfortext, surfacesforimage
+export imagesfortext, imagesforsurface
 
 include("dsetriple.jl")
 include("dsecollection.jl")
+include("retrieval.jl")
+
+
 #include("cex.jl")
 #include("dfs.jl")
 

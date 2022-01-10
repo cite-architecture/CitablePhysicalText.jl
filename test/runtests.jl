@@ -8,6 +8,7 @@ using Test
 
 include("test_dsetriple.jl")
 include("test_dsecollection.jl")
+include("test_retrieval.jl")
 
 
 

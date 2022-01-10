@@ -1,16 +1,7 @@
-# API documentation
+# Searching `DSECollection`s
 
-```@docs
-DSETriple
-triple
-triples 
-passage
-image
-surface
-DSECollection
-```
+The contents of `DSECollection`s can be queried with the following functions:
 
-Retrieval:
 
 ```@docs
 textsforsurface
