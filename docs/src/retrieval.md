@@ -3,11 +3,11 @@
 The contents of `DSECollection`s can be queried with the following functions:
 
 
-```@docs
-textsforsurface
-textsforimage
-surfacesfortext
-surfacesforimage
-imagesfortext
-imagesforsurface
-```
+- `textsforsurface`
+- `textsforimage`
+- `surfacesfortext`
+- `surfacesforimage`
+- `imagesfortext`
+- `imagesforsurface`
+
+See the API documentation for details.
