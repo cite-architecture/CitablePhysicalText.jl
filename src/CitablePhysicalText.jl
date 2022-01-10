@@ -28,7 +28,7 @@ export triple, triples
 export passage, image, surface
 
 export DSECollection
-
+export passages, images, surfaces
 export textsforsurface, textsforimage
 export surfacesfortext, surfacesforimage
 export imagesfortext, imagesforsurface
