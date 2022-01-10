@@ -25,8 +25,8 @@
 
     @test length(surfaces(coll)) == 1
     @test length(images(coll)) == 4
-    @test length(images(coll, keepsubef = false)) == 1
+    @test length(images(coll, keepsubref = false)) == 1
     @test length(passages(coll)) == 4
-    @test length(passages(coll, keepsubef = false)) == 4
+    @test length(passages(coll, keeppassage = false)) == 1
 
 end
