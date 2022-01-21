@@ -114,7 +114,7 @@ $(SIGNATURES)
 `cexsrc` should be a single `citerelationset` block.
 """
 function fromcex(trait::DSECex, cexsrc::AbstractString, ::Type{DSECollection}; 
-    delimiter = "|", configuration = nothing)
+    delimiter = "|", configuration = nothing, strict = true)
     (coll_urn, coll_label) = headerinfo(cexsrc, delimiter = delimiter)
     triplelist = triples(join(data(cexsrc, "citerelationset", delimiter = delimiter), "\n"))
     DSECollection(coll_urn, coll_label, triplelist)
