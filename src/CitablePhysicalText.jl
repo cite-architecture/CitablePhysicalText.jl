@@ -7,6 +7,7 @@ using CitableBase
 import CitableBase: citabletrait
 import CitableBase: urn
 import CitableBase: label
+import CitableBase: urntype
 
 import CitableBase: urncomparisontrait
 import CitableBase: urnequals
@@ -33,8 +34,16 @@ export textsforsurface, textsforimage
 export surfacesfortext, surfacesforimage
 export imagesfortext, imagesforsurface
 
+export MSPage
+
+"Abstract type for physical objects with text"
+abstract type TextBearingSurface end
+
+
+
 include("dsetriple.jl")
 include("dsecollection.jl")
 include("retrieval.jl")
+include("mspage.jl")
 
 end # module
