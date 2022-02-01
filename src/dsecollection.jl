@@ -54,6 +54,15 @@ function label(dsec::DSECollection)
     dsec.label
 end
 
+"""URN type for a `DSECollection`.
+$(SIGNATURES)
+Required function for `Citable` abstraction.
+"""
+function urntype(dsec::DSECollection)
+    Cite2Urn
+end
+
+
 "Define singleton type to use as value of `UrnComparisonTrait` on `DSECollection`."
 struct ComparableDSECollection <: UrnComparisonTrait end
 """Set value of `UrnComparisonTrait` for `DSECollection`.
