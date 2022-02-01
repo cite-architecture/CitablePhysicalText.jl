@@ -65,5 +65,69 @@ function label(pg::MSPage)
 end
 
 
+"Define singleton type to use as value of `UrnComparisonTrait` on `MSPage`."
+struct PageComparable <: UrnComparisonTrait end
+"""Set value of `UrnComparisonTrait` for `MSPage`.
+$(SIGNATURES)
+"""
+function urncomparisontrait(::Type{MSPage})
+    PageComparable()
+end
+
+"""Implement urn comparison for equality for `MSPage`.
+$(SIGNATURES)
+"""
+function urnequals(pg1::MSPage, pg2::MSPage)
+    pg1.urn == pg2.urn
+end
+
+"""Implement urn comparison for containment for `MSPage`.
+$(SIGNATURES)
+"""
+function urncontains(pg1::MSPage, pg2::MSPage)
+    urncontains(pg1.urn, pg2.urn)
+end
+"""Implement urn comparison for similarity for `MSPage`.
+$(SIGNATURES)
+"""
+function urnsimilar(pg1::MSPage, pg2::MSPage)
+    urnsimilar(pg1.urn, pg2.urn)
+end
+
+"Define singleton type to use as value of `CexTrait` on `MSPage`."
+struct PageCex <: CexTrait end
+import CitableBase: cextrait
+"""Set value of `CexTrait` for `MSPage`.
+$(SIGNATURES)
+"""
+function cextrait(::Type{MSPage})
+    PageCex()
+end
+
+"""Serialie `pg` to delimited text.
+$(SIGNATURES)
+Required for `CexTrait`.
+"""    
+function cex(pg::MSPage; delimiter = "|")
+    join([string(pg.urn), pg.label, pg.rv, string(pg.image), pg.sequence], delimiter)
+end
+
+
+"""Instantiate a `MSPage`from delimited text.
+$(SIGNATURES)
+"""
+function fromcex(traitvalue::PageCex, cexsrc::AbstractString, T;
+    delimiter = "|", configuration = nothing, strict = true)
+    fields = split(cexsrc, delimiter)
+    urn = Cite2Urn(fields[1])
+    lbl = fields[2]
+    rv = fields[3]
+    img = Cite2Urn(fields[4])
+    seq = parse(Int64, fields[5])
+    MSPage(urn, lbl, rv, img, seq)
+
+end
+
+
 # Example CEX record:
 # 5|urn:cite2:hmt:msA.v1:3r|recto|Venetus A (Marciana 454 = 822), folio 3, recto|urn:cite2:hmt:vaimg.2017a:VA003RN_0004

@@ -16,5 +16,3 @@
     @test label(pg) == lbl
     @test urntype(typeof(pg)) == Cite2Urn
 end
-
-
