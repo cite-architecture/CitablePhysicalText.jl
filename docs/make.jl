@@ -14,7 +14,7 @@ Pkg.instantiate()
 using Documenter, DocStringExtensions, CitablePhysicalText
 
 makedocs(
-    sitename = "CitableText Documentation",
+    sitename = "CitablePhysicalText",
     pages = [
         "Home" => "index.md",
         "The DSETriple" => "dsetriple.md",
