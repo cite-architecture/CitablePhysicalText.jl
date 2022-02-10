@@ -1,11 +1,16 @@
 module CitablePhysicalText
 
 using Documenter, DocStringExtensions
-#using DataFrames, CSV
-
 
 import Base: ==
 import Base: show
+
+using Base.Iterators
+import Base: length
+import Base: eltype
+import Base: iterate
+import Base: filter
+import Base: reverse
 
 import CitableBase: citablecollectiontrait
 

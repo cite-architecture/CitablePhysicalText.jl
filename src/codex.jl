@@ -262,3 +262,48 @@ function strictparse(cexsrc::AbstractString; delimiter = "|")
 end
 
 
+"""Number of pages in `ms`.
+$(SIGNATURES)
+"""
+function length(ms::Codex)
+    length(ms.pages)
+end
+
+
+	
+"""A `Codex` is a collection of `MSPage`s.
+$(SIGNATURES)
+"""
+function eltype(ms::Codex)
+    MSPage
+end
+
+"""Initial state of iterator for a `Codex`.
+$(SIGNATURES)
+"""
+function iterate(ms::Codex)
+    isempty(ms.pages) ? nothing : (ms.pages[1], 2)
+end
+
+"""Iterate a `Codex` with array index at `state`.
+$(SIGNATURES)
+"""
+function iterate(ms::Codex, state)
+    state > length(ms.pages) ? nothing : (ms.pages[state], state + 1)
+end
+
+"""Filter the list of pages in a `Codex`.
+$(SIGNATURES)
+"""
+function filter(f, ms::Codex)
+     Iterators.filter(f, collect(ms))
+end
+
+"""Reverse the order of pages in a `Codex`.
+$(SIGNATURES)
+I don't know, maybe you need to page through backwards
+for some reason.
+"""
+function reverse(ms::Codex)
+    reverse(ms.pages)
+end

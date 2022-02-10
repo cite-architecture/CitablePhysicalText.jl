@@ -40,7 +40,6 @@ end
 
 
 @testset "Test cex trait of `Codex`" begin
-    #cexserializable, cex, fromcex
     u = Cite2Urn("urn:cite2:hmt:msA.v1:3r")
     img = Cite2Urn("urn:cite2:hmt:vaimg.2017a:VA003RN_0004")
     lbl = "folio 3, recto"
@@ -60,9 +59,16 @@ end
 
 @testset "Test julia collection traits of `Codex" begin
     # iterate, length, eltype, filter, reverse
+    f = joinpath(pwd(), "assets", "burney86-sample.cex")
+    ms = fromcex(f, Codex, FileReader)
+    @test eltype(ms) == MSPage
+    @test length(ms) == 9
+    @test typeof(collect(ms))  <: Vector
+    @test length(filter(p -> p.rv == "recto", ms) |> collect) == 5
+    @test reverse(ms)[1] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:5r")
+
+    windoid =  slidingwindow(ms)
+    @test windoid[1][1] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:1r")
+    @test windoid[end][2] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:5r")
 end
 
-
-@testset "Test sliding windows on `Codex`" begin
-    
-end
