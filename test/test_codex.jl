@@ -50,22 +50,12 @@ end
     codex1 = codex([pg])
     @test cexserializable(codex1)
 
-    expected = """#!datamodels
-    Collection|Model|Label|Description
-    urn:cite2:hmt:msA.v1:|urn:cite2:hmt:datamodels.v1:codexmodel|Codex with 1 page
-    
-    #!citeproperties
-    Property|Label|Type|Authority list
-    urn:cite2:hmt:msA.v1.urn:|URN|Cite2Urn|
-    urn:cite2:hmt:msA.v1.label:|Label|String|
-    urn:cite2:hmt:msA.v1.rv:|Recto or verso|String|recto,verso
-    urn:cite2:hmt:msA.v1.image:|TBS image|Cite2Urn|
-    urn:cite2:hmt:msA.v1.sequence:|Page seqence|Number|
-    
-    #citedata
-    urn:cite2:hmt:msA.v1:3r|folio 3, recto|recto|urn:cite2:hmt:vaimg.2017a:VA003RN_0004|5
-    """
+    expected = "#!datamodels\nCollection|Model|Label|Description\nurn:cite2:hmt:msA.v1:|urn:cite2:hmt:datamodels.v1:codexmodel|Codex with 1 page\n\n#!citeproperties\nProperty|Label|Type|Authority list\nurn:cite2:hmt:msA.v1.urn:|URN|Cite2Urn|\nurn:cite2:hmt:msA.v1.label:|Label|String|\nurn:cite2:hmt:msA.v1.rv:|Recto or verso|String|recto,verso\nurn:cite2:hmt:msA.v1.image:|TBS image|Cite2Urn|\nurn:cite2:hmt:msA.v1.sequence:|Page seqence|Number|\n\n#!citedata\nurn|label|rv|image|sequence\nurn:cite2:hmt:msA.v1:3r|folio 3, recto|recto|urn:cite2:hmt:vaimg.2017a:VA003RN_0004|5"
     @test strip(cex(codex1))   == strip(expected)
+    @test length(fromcex(cex(codex1), Codex)) == length(codex1)
+
+
+    @test_broken fromcex(cex(codex1), Codex) == codex1
 end
 
 @testset "Test julia collection traits of `Codex" begin
