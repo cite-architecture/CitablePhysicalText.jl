@@ -63,3 +63,13 @@ $(SIGNATURES)
 function urnsimilar(u::Cite2Urn, codex::Codex)
     filter(pg -> urnsimilar(u, pg.urn), codex.pages)
 end
+
+"""Define singleton type to use as value for `CitableCollectionTrait`."""
+struct CodexCex <: CexTrait end
+"""Define value of `CexTrait` for `Codex`.
+$(SIGNATURES)
+"""
+function cextrait(::Type{Codex})
+    CodexCex()
+end
+

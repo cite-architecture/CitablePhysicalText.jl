@@ -17,8 +17,7 @@
 end
 
 
-@testset "Test urn comparison trait of `ImageCollection`" begin
-    # urncomparable, urnequals, urncontains, urnsimilar
+@testset "Test urn comparison trait of `Codex`" begin
     u = Cite2Urn("urn:cite2:hmt:msA.v1:3r")
     img = Cite2Urn("urn:cite2:hmt:vaimg.2017a:VA003RN_0004")
     lbl = "folio 3, recto"
@@ -34,15 +33,23 @@ end
 end
 
 
-@testset "Test cex trait of `ImageCollection`" begin
+@testset "Test cex trait of `Codex`" begin
     #cexserializable, cex, fromcex
+    u = Cite2Urn("urn:cite2:hmt:msA.v1:3r")
+    img = Cite2Urn("urn:cite2:hmt:vaimg.2017a:VA003RN_0004")
+    lbl = "folio 3, recto"
+    rv = "recto"
+    pg = MSPage(u, lbl, rv, img, 5)
+
+    codex = Codex([pg])
+    @test cexserializable(codex)
 end
 
-@testset "Test julia collection traits of `ImageCollection" begin
+@testset "Test julia collection traits of `Codex" begin
     # iterate, length, eltype, filter, reverse
 end
 
 
-@testset "Test sliding windows on `ImageCollection`" begin
+@testset "Test sliding windows on `Codex`" begin
     
 end
