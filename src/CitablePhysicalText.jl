@@ -1,7 +1,13 @@
 module CitablePhysicalText
 
+using Documenter, DocStringExtensions
+#using DataFrames, CSV
+
+
 import Base: ==
 import Base: show
+
+import CitableBase: citablecollectiontrait
 
 using CitableBase
 import CitableBase: citabletrait
@@ -21,8 +27,6 @@ import CitableBase: fromcex
 using CitableText, CitableObject
 using CiteEXchange
 
-using Documenter, DocStringExtensions
-using DataFrames, CSV
 
 export DSETriple
 export triple, triples 
@@ -35,6 +39,7 @@ export surfacesfortext, surfacesforimage
 export imagesfortext, imagesforsurface
 
 export MSPage
+export Codex
 
 "Abstract type for physical objects with text"
 abstract type TextBearingSurface end
@@ -45,5 +50,6 @@ include("dsetriple.jl")
 include("dsecollection.jl")
 include("retrieval.jl")
 include("mspage.jl")
+include("codex.jl")
 
 end # module
