@@ -127,3 +127,77 @@ function cextrait(::Type{Codex})
     CodexCex()
 end
 
+"""Serialize `ms` to delimited text in CEX format.
+$(SIGNATURES)
+
+"""
+function cex(ms::Codex; delimiter = "|")
+    datalines = ["#citedata"]
+    for pg in ms.pages
+        push!(datalines, cex(pg, delimiter = delimiter))
+    end
+
+    dmcex(ms, delimiter = delimiter)  * "\n\n" * propertiescex(ms::Codex, delimiter = delimiter) * "\n\n" * join(datalines, "\n")
+end
+
+"""Compose `datamodel` CEX block for `ms`.
+$(SIGNATURES)
+"""
+function dmcex(ms::Codex; delimiter = "|")
+    lines = [
+        "#!datamodels",
+        "Collection|Model|Label|Description",
+        join([string(urn(ms)), string(CODEX_MODEL), label(ms)], delimiter)      
+    ]
+    join(lines, "\n")
+end
+
+"""Compose `citeproperties` CEX block for `ms`.
+$(SIGNATURES)
+"""
+function propertiescex(ms::Codex; delimiter = "|")
+    urnsettings = join([
+        string(addproperty(urn(ms), "urn")),
+        "URN",
+        "Cite2Urn",
+        ""
+    ], delimiter)
+
+    labelsettings = join([
+        string(addproperty(urn(ms), "label")),
+        "Label",
+        "String",
+        ""
+    ], delimiter)
+
+    rvsettings = join([
+        string(addproperty(urn(ms), "rv")),
+        "Recto or verso",
+        "String",
+        "recto,verso"
+    ], delimiter)
+
+    imgsettings = join([
+        string(addproperty(urn(ms), "image")),
+        "TBS image",
+        "Cite2Urn",
+        ""
+    ], delimiter)
+
+    seqsettings = join([
+        string(addproperty(urn(ms), "sequence")),
+        "Page seqence",
+        "Number",
+        ""
+    ], delimiter)
+    lines = ["#!citeproperties",
+        "Property|Label|Type|Authority list",
+        urnsettings,
+        labelsettings,
+        rvsettings,
+        imgsettings,
+        seqsettings
+    ]  
+    join(lines, "\n")
+end
+
