@@ -77,21 +77,21 @@ end
 """Implement urn comparison for equality for `MSPage`.
 $(SIGNATURES)
 """
-function urnequals(pg1::MSPage, pg2::MSPage)
-    pg1.urn == pg2.urn
+function urnequals(u::Cite2Urn, pg1::MSPage)
+    pg1.urn == u
 end
 
 """Implement urn comparison for containment for `MSPage`.
 $(SIGNATURES)
 """
-function urncontains(pg1::MSPage, pg2::MSPage)
-    urncontains(pg1.urn, pg2.urn)
+function urncontains(u::Cite2Urn, pg1::MSPage)
+    urncontains(u, pg1.urn)
 end
 """Implement urn comparison for similarity for `MSPage`.
 $(SIGNATURES)
 """
-function urnsimilar(pg1::MSPage, pg2::MSPage)
-    urnsimilar(pg1.urn, pg2.urn)
+function urnsimilar(u::Cite2Urn, pg1::MSPage)
+    urnsimilar(u, pg1.urn)
 end
 
 "Define singleton type to use as value of `CexTrait` on `MSPage`."
@@ -125,7 +125,6 @@ function fromcex(traitvalue::PageCex, cexsrc::AbstractString, T;
     img = Cite2Urn(fields[4])
     seq = parse(Int64, fields[5])
     MSPage(urn, lbl, rv, img, seq)
-
 end
 
 

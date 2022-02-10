@@ -10,6 +10,7 @@ include("test_dsetriple.jl")
 include("test_dsecollection.jl")
 include("test_retrieval.jl")
 include("test_page.jl")
+include("test_codex.jl")
 
 
 
