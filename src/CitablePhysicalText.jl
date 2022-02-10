@@ -39,13 +39,13 @@ export surfacesfortext, surfacesforimage
 export imagesfortext, imagesforsurface
 
 export MSPage
-export Codex
+export Codex, codex
 
 "Abstract type for physical objects with text"
 abstract type TextBearingSurface end
 
 
-
+include("constants.jl")
 include("dsetriple.jl")
 include("dsecollection.jl")
 include("retrieval.jl")

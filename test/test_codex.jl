@@ -5,15 +5,21 @@
     rv = "recto"
     pg = MSPage(u, lbl, rv, img, 5)
 
-    codex = Codex([pg])
-    @test codex isa Codex
-    @test string(codex) == "Codex with 1 page"
+    codex1 = codex([pg])
+    @test codex1 isa Codex
+    @test string(codex1) == "Codex with 1 page"
     
     pg2 = MSPage(u, lbl, rv, img, 5)
-    codex2 = Codex([pg2])
-    @test codex == codex2
+    codex2 = codex([pg2])
+    @test codex1 == codex2
 
-    @test citablecollection(codex)
+    @test citablecollection(codex1)
+    @test citable(codex1)
+    @test urntype(codex1) == Cite2Urn
+    @test urn(codex1) == Cite2Urn("urn:cite2:hmt:msA.v1:")
+    @test label(codex1) == "Codex with 1 page"
+
+
 end
 
 
@@ -24,12 +30,12 @@ end
     rv = "recto"
     pg = MSPage(u, lbl, rv, img, 5)
 
-    codex = Codex([pg])
-    @test urncomparable(codex)
+    codex1 = codex([pg])
+    @test urncomparable(codex1)
     collurn = dropobject(u)
-    @test urnequals(collurn, codex) |> isempty
-    @test urncontains(collurn, codex) |> length == 1
-    @test urnsimilar(collurn, codex) |> length == 1
+    @test urnequals(collurn, codex1) |> isempty
+    @test urncontains(collurn, codex1) |> length == 1
+    @test urnsimilar(collurn, codex1) |> length == 1
 end
 
 
@@ -41,8 +47,8 @@ end
     rv = "recto"
     pg = MSPage(u, lbl, rv, img, 5)
 
-    codex = Codex([pg])
-    @test cexserializable(codex)
+    codex1 = codex([pg])
+    @test cexserializable(codex1)
 end
 
 @testset "Test julia collection traits of `Codex" begin
