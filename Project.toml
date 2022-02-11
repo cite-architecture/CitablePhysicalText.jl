@@ -1,7 +1,7 @@
 name = "CitablePhysicalText"
 uuid = "e38a874e-a7c2-4ff3-8dea-81ae2e5c9b07"
 authors = ["nsmith "]
-version = "0.8.0"
+version = "0.8.1"
 
 [deps]
 CitableBase = "d6f014bd-995c-41bd-9893-703339864534"
@@ -16,7 +16,7 @@ Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
 CitableBase = "10.1"
-CitableImage = "0.4"
+CitableImage = "0.5"
 CitableObject = "0.11"
 CitableText = "0.14"
 CiteEXchange = "0.9"
