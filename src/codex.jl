@@ -227,7 +227,7 @@ $(SIGNATURES)
 """
 function parsedatamodel(cexsrc::AbstractString; delimiter = "|")
     dms = data(cexsrc, "datamodels")
-    @warn("DMs in CEX", length(dms))
+    @debug("DMs in CEX", length(dms))
     codexcollections = Cite2Urn[]
     for dm in dms
         cols = split(dm, delimiter)
@@ -242,9 +242,9 @@ function parsedatamodel(cexsrc::AbstractString; delimiter = "|")
         try
             refurn = Cite2Urn(urnpeek(db)) |> dropobject
             if refurn in codexcollections
-                @warn("Woot! save block with URN ", refurn)
+                @debug("Woot! save block with URN ", refurn)
                 onecodex = parsecodexblock(db)
-                @warn("Parsing yielded", onecodex)
+                @debug("Parsing yielded", onecodex)
                 push!(codices, parsecodexblock(db))
             end
             
@@ -280,11 +280,11 @@ $(SIGNATURES)
 Read the header line for the block to determine ordering of required columns.
 """
 function parsecodexblock(b::Block; delimiter = "|")
-    @warn("Parse single block")
+    @debug("Parse single block")
     orderdict = columndict(b, delimiter = delimiter)
     datalines = b.lines[2:end]
     pagelist  = MSPage[]
-    @warn("Parse", length(datalines))
+    @debug("Parse", length(datalines))
     for ln in datalines    
         strs = split(ln, "|")
         pgurn = strs[orderdict["urn"]] |> Cite2Urn
