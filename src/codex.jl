@@ -216,7 +216,7 @@ function fromcex(trait::CodexCex, cexsrc::AbstractString, T;
         @warn("Parse CEX for codex strictliy")
         parsedatamodel(cexsrc, delimiter = delimiter)
     else
-       parsecodexblock(cexsrc, delimiter = delimiter)
+       [parsecodexblock(cexsrc, delimiter = delimiter)]
     end
 end
 
