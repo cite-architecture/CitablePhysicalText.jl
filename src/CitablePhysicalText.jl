@@ -2,6 +2,8 @@ module CitablePhysicalText
 
 using Documenter, DocStringExtensions
 
+using SplitApplyCombine
+
 import Base: ==
 import Base: show
 
