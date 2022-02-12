@@ -2,6 +2,8 @@ module CitablePhysicalText
 
 using Documenter, DocStringExtensions
 
+using SplitApplyCombine
+
 import Base: ==
 import Base: show
 
@@ -45,6 +47,7 @@ export imagesfortext, imagesforsurface
 
 export MSPage
 export Codex, codex
+
 
 "Abstract type for physical objects with text"
 abstract type TextBearingSurface end

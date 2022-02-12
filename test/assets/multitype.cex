@@ -1,3 +1,7 @@
+#!citedata
+urn|label|irrevelant
+urn:cite2:fake:c.1:nothing|A red herring data set|-1
+
 #!datamodels
 Collection|Model|Label|Description
 urn:cite2:citebl:burney86pages.v1:|urn:cite2:hmt:datamodels.v1:codexmodel|HMT project model of a codex with recto and verso sides to each folio.
