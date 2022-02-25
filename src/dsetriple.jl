@@ -35,11 +35,30 @@ function triples(src::AbstractString; delimiter = "|")
    triplelist = DSETriple[]   
    lines = split(src, "\n")
    nonempty = filter(ln -> ! isempty(ln), lines)
+   map(ln -> triple(ln, delimiter = delimiter), nonempty)
+   #=
    for ln in nonempty
     push!(triplelist, triple(ln, delimiter = delimiter))
    end
    triplelist
+   =#
 end
+
+"""Compose a Vector of `DSETriple`s from delimited-text source.
+$(SIGNATURES)
+"""
+function triples(lines::Vector{<: AbstractString}; delimiter = "|")
+   #triplelist = DSETriple[]   
+   nonempty = filter(ln -> ! isempty(ln), lines)
+    map(ln -> triple(ln, delimiter = delimiter), nonempty)
+   #=
+   for ln in nonempty
+    push!(triplelist, triple(ln, delimiter = delimiter))
+   end
+   triplelist
+   =#
+end
+
 
 
 """Return `passage` field of `trip`.

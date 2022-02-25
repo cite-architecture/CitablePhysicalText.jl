@@ -115,6 +115,21 @@ function cex(dsec::DSECollection; delimiter = "|")
     for dsetriple in dsec.data
         push!(lines, delimited(dsetriple, delimiter = delimiter))
     end
+    modelcex(dsec, delimiter = delimiter) * "\n\n" * join(lines, "\n")
+end
+
+
+"""Compose `datamodel` CEX block for `dsec`.
+$(SIGNATURES)
+"""
+function modelcex(dsec::DSECollection; delimiter = "|")
+    lines = [
+    "#!datamodels",
+    join(["Collection", "Model", "Label", "Description"], delimiter),
+    join([string(urn(dsec)), "urn:cite2:cite:datamodels.v1:dsemodel",  
+    "Passage of text in a digital scholarly edition",
+    "Relations of text, manuscript page and documentary image for all edited texts"])
+    ]
     join(lines, "\n")
 end
 
@@ -122,21 +137,68 @@ end
 $(SIGNATURES)
 `cexsrc` should be a single `citerelationset` block.
 """
-function fromcex(trait::DSECex, cexsrc::AbstractString, ::Type{DSECollection}; 
+function fromcex(trait::DSECex, 
+    cexsrc::AbstractString, 
+    ::Type{DSECollection}; 
     delimiter = "|", configuration = nothing, strict = true)
-    (coll_urn, coll_label) = headerinfo(cexsrc, delimiter = delimiter)
-    triplelist = triples(join(data(cexsrc, "citerelationset", delimiter = delimiter), "\n"))
-    DSECollection(coll_urn, coll_label, triplelist)
+    if strict == false
+        @warn("Lazily treating all relation set data as one DSECollection")
+        datalines = data(cexsrc, "citerelationset")
+        if isempty(datalines)
+            throw(DomainError("No citerelationset block found in source CEX."))
+        end
+
+        tripleset = map(line -> triple(line, delimiter = delimiter), datalines)
+        label = "Automatically assembled set of DSETriples"
+        cols = split(datalines[1], delimiter)
+        relseturn = Cite2Urn(cols[2]) |> dropobject
+        [DSECollection(relseturn, label, tripleset)]
+
+    else
+        impls = implementations(cexsrc, CitablePhysicalText.DSE_MODEL)
+        if isempty(impls)
+            throw(DomainError("No citerelationsets configured for DSE model $(CitablePhysicalText.DSE_MODEL)."))
+        end
+
+        relsets = DSECollection[]
+        for impl in impls
+            label = relationsetlabel(cexsrc, impl)
+            tripleset = map(line -> triple(line, delimiter = delimiter), relations(cexsrc, impl))
+
+            push!(relsets, DSECollection(impl, label, tripleset))
+        end
+        relsets
+    end
 end
 
 
-"""Parse header of `cexsrc` into URN and label for DSE collection.
+"""Number of DSE records in collection `dsec`
 $(SIGNATURES)
-`cexsrc` should be a single `citerelationset` block.
 """
-function headerinfo(cexsrc::AbstractString; delimiter = "|")
-    cexblock = blocks(cexsrc, "citerelationset")[1]
-    urnkv = split(cexblock.lines[1], delimiter)
-    labelkv = split(cexblock.lines[2], delimiter)
-    (Cite2Urn(urnkv[2]), labelkv[2])
+function length(dsec::DSECollection)
+    length(dsec.data)
+end
+
+
+"""A `DSECollection` contains `DSETriple`s.
+$(SIGNATURES)
+"""
+function eltype(dsec::DSECollection)
+    DSETriple   
+end
+
+function iterate(dsec::DSECollection)
+    isempty(dsec.data) ? nothing : (dsec.data[1], 2)
+end
+
+function iterate(dsec::DSECollection, state)
+    state > length(dsec.data) ? nothing : (dsec.data[state], state + 1)
+end
+
+function filter(f, dsec::DSECollection)
+    Iterators.filter(f, dsec) |> collect
+end
+
+function reverse(dsec::DSECollection)
+   reverse(dsec.data)  |> collect
 end

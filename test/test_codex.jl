@@ -53,14 +53,16 @@ end
     @test strip(cex(codex1))   == strip(expected)
     @test length(fromcex(cex(codex1), Codex)) == length(codex1)
 
-
-    @test_broken fromcex(cex(codex1), Codex) == codex1
+    mss = fromcex(cex(codex1), Codex)
+    ms = mss[1]
+    @test ms.pages == codex1.pages
 end
 
 @testset "Test julia collection traits of `Codex" begin
     # iterate, length, eltype, filter, reverse
     f = joinpath(pwd(), "assets", "burney86-sample.cex")
-    ms = fromcex(f, Codex, FileReader)
+    mss = fromcex(f, Codex, FileReader)
+    ms = mss[1]
     @test eltype(ms) == MSPage
     @test length(ms) == 9
     @test typeof(collect(ms))  <: Vector
