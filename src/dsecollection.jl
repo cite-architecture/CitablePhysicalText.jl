@@ -118,6 +118,10 @@ function cex(dsec::DSECollection; delimiter = "|")
     modelcex(dsec, delimiter = delimiter) * "\n\n" * join(lines, "\n")
 end
 
+
+"""Compose `datamodel` CEX block for `dsec`.
+$(SIGNATURES)
+"""
 function modelcex(dsec::DSECollection; delimiter = "|")
     lines = [
     "#!datamodels",
@@ -128,9 +132,6 @@ function modelcex(dsec::DSECollection; delimiter = "|")
     ]
     join(lines, "\n")
 end
-
-
-
 
 """Parse a delimited-text string into a `DSECollection`.
 $(SIGNATURES)
@@ -170,3 +171,34 @@ function fromcex(trait::DSECex,
     end
 end
 
+
+"""Number of DSE records in collection `dsec`
+$(SIGNATURES)
+"""
+function length(dsec::DSECollection)
+    length(dsec.data)
+end
+
+
+"""A `DSECollection` contains `DSETriple`s.
+$(SIGNATURES)
+"""
+function eltype(dsec::DSECollection)
+    DSETriple   
+end
+
+function iterate(dsec::DSECollection)
+    isempty(dsec.data) ? nothing : (dsec.data[1], 2)
+end
+
+function iterate(dsec::DSECollection, state)
+    state > length(dsec.data) ? nothing : (dsec.data[state], state + 1)
+end
+
+function filter(f, dsec::DSECollection)
+    Iterators.filter(f, dsec) |> collect
+end
+
+function reverse(dsec::DSECollection)
+   reverse(dsec.data)  |> collect
+end
