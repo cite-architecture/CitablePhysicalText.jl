@@ -234,7 +234,7 @@ $(SIGNATURES)
 function mspagefromdelimited(ln::AbstractString, orderdict; delimiter = "|")
     strs = split(ln, delimiter)
     pgurn = strs[orderdict["urn"]] |> Cite2Urn
-    pglabel = strs[orderdict["urn"]]
+    pglabel = strs[orderdict["label"]]
     pgrv = strs[orderdict["rv"]]
     pgimg = strs[orderdict["image"]] |> Cite2Urn
     pgseq = parse(Int64, strs[orderdict["sequence"]])
@@ -243,91 +243,6 @@ function mspagefromdelimited(ln::AbstractString, orderdict; delimiter = "|")
 end
 
 
-
-"""Create instances of `Codex` from `cexsrc` by consulting the
-`datamodels` blocks of the CEX data and filtering content 
-of `citedata` blocks for matching collections.
-$(SIGNATURES)
-"""
-function parsedatamodel(cexsrc::AbstractString; delimiter = "|")
-    dms = data(cexsrc, "datamodels")
-    @debug("DMs in CEX", length(dms))
-    codexcollections = Cite2Urn[]
-    for dm in dms
-        cols = split(dm, delimiter)
-        if Cite2Urn(cols[2]) == CODEX_MODEL
-            push!(codexcollections, Cite2Urn(cols[1]))
-        end
-    end
-
-    datablocks = blocks(cexsrc, "citedata")
-    codices = Codex[]
-    for db in datablocks
-        try
-            refurn = Cite2Urn(urnpeek(db)) |> dropobject
-            if refurn in codexcollections
-                @debug("Woot! save block with URN ", refurn)
-                onecodex = parsecodexblock(db)
-                @debug("Parsing yielded", onecodex)
-                push!(codices, parsecodexblock(db))
-            end
-            
-        catch
-            # Collection in configured list
-        end
-    end
-    codices
-
-end
-
-
-"""Map column labels to column numbers
-$(SIGNATURES)
-"""
-function columndict(b::Block; delimiter = "|")
-    hdr = b.lines[1]
-    cols = split(hdr, delimiter)
-    orderdict = Dict()
-    for i in 1:length(cols)
-        orderdict[lowercase(cols[i])] = i
-    end
-    orderdict
-end
-
-
-function parsecodexblock(cexsrc::AbstractString; delimiter = "|")
-    parsecodexblock(blocks(cexsrc, "citedata")[1], delimiter = delimiter)
-end
-
-"""Instantiate a `Codex` from data in a single `citedata` block.
-$(SIGNATURES)
-Read the header line for the block to determine ordering of required columns.
-"""
-function parsecodexblock(b::Block; delimiter = "|")
-    @debug("Parse single block")
-    orderdict = columndict(b, delimiter = delimiter)
-    datalines = b.lines[2:end]
-    pagelist  = MSPage[]
-    @debug("Parse", length(datalines))
-    for ln in datalines    
-        strs = split(ln, "|")
-        pgurn = strs[orderdict["urn"]] |> Cite2Urn
-        pglabel = strs[orderdict["urn"]]
-        pgrv = strs[orderdict["rv"]]
-        pgimg = strs[orderdict["image"]] |> Cite2Urn
-        pgseq = parse(Int64, strs[orderdict["sequence"]])
-
-        push!(pagelist, MSPage(pgurn, pglabel, pgrv, pgimg, pgseq))
-    end
-    codex(pagelist)
-
-end
-
-function urnpeek(datablock::Block; delimiter = "|")
-    urnindex = columndict(datablock)["urn"]
-    cols = split(datablock.lines[2], delimiter)
-    cols[urnindex]
-end
 
 """Number of pages in `ms`.
 $(SIGNATURES)
