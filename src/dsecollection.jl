@@ -118,15 +118,25 @@ function cex(dsec::DSECollection; delimiter = "|")
     join(lines, "\n")
 end
 
+## THIS HAS TO WORK BY BLOCK.  WE WANT TO CREATE A VECTOR OF DSE COLLECTIONS
 """Parse a delimited-text string into a `DSECollection`.
 $(SIGNATURES)
 `cexsrc` should be a single `citerelationset` block.
 """
-function fromcex(trait::DSECex, cexsrc::AbstractString, ::Type{DSECollection}; 
+function fromcex(trait::DSECex, 
+    cexsrc::AbstractString, 
+    ::Type{DSECollection}; 
     delimiter = "|", configuration = nothing, strict = true)
-    (coll_urn, coll_label) = headerinfo(cexsrc, delimiter = delimiter)
-    triplelist = triples(join(data(cexsrc, "citerelationset", delimiter = delimiter), "\n"))
-    DSECollection(coll_urn, coll_label, triplelist)
+
+    impls = implementations(cexsrc, CitablePhysicalText.DSE_MODEL)
+    relsets = DSECollection[]
+    for impl in impls
+        label = relationsetlabel(cexsrc, impl)
+        tripleset = map(line -> triple(line, delimiter = delimiter), relations(cexsrc, impl))
+
+        push!(relsets, DSECollection(impl, label, tripleset))
+    end
+    relsets
 end
 
 

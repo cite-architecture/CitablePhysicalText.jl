@@ -32,6 +32,7 @@ import CitableBase: cex
 import CitableBase: fromcex
 
 using CitableText, CitableObject
+using CitableObject.CexUtils
 using CiteEXchange
 
 
