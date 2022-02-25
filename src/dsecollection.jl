@@ -115,10 +115,23 @@ function cex(dsec::DSECollection; delimiter = "|")
     for dsetriple in dsec.data
         push!(lines, delimited(dsetriple, delimiter = delimiter))
     end
+    modelcex(dsec, delimiter = delimiter) * "\n\n" * join(lines, "\n")
+end
+
+function modelcex(dsec::DSECollection; delimiter = "|")
+    lines = [
+    "#!datamodels",
+    join(["Collection", "Model", "Label", "Description"], delimiter),
+    join([string(urn(dsec)), "urn:cite2:cite:datamodels.v1:dsemodel",  
+    "Passage of text in a digital scholarly edition",
+    "Relations of text, manuscript page and documentary image for all edited texts"])
+    ]
     join(lines, "\n")
 end
 
-## THIS HAS TO WORK BY BLOCK.  WE WANT TO CREATE A VECTOR OF DSE COLLECTIONS
+
+
+
 """Parse a delimited-text string into a `DSECollection`.
 $(SIGNATURES)
 `cexsrc` should be a single `citerelationset` block.
@@ -127,16 +140,34 @@ function fromcex(trait::DSECex,
     cexsrc::AbstractString, 
     ::Type{DSECollection}; 
     delimiter = "|", configuration = nothing, strict = true)
+    if strict == false
+        @warn("Lazily treating all relation set data as one DSECollection")
+        datalines = data(cexsrc, "citerelationset")
+        if isempty(datalines)
+            throw(DomainError("No citerelationset block found in source CEX."))
+        end
 
-    impls = implementations(cexsrc, CitablePhysicalText.DSE_MODEL)
-    relsets = DSECollection[]
-    for impl in impls
-        label = relationsetlabel(cexsrc, impl)
-        tripleset = map(line -> triple(line, delimiter = delimiter), relations(cexsrc, impl))
+        tripleset = map(line -> triple(line, delimiter = delimiter), datalines)
+        label = "Automatically assembled set of DSETriples"
+        cols = split(datalines[1], delimiter)
+        relseturn = Cite2Urn(cols[2]) |> dropobject
+        [DSECollection(relseturn, label, tripleset)]
 
-        push!(relsets, DSECollection(impl, label, tripleset))
+    else
+        impls = implementations(cexsrc, CitablePhysicalText.DSE_MODEL)
+        if isempty(impls)
+            throw(DomainError("No citerelationsets configured for DSE model $(CitablePhysicalText.DSE_MODEL)."))
+        end
+
+        relsets = DSECollection[]
+        for impl in impls
+            label = relationsetlabel(cexsrc, impl)
+            tripleset = map(line -> triple(line, delimiter = delimiter), relations(cexsrc, impl))
+
+            push!(relsets, DSECollection(impl, label, tripleset))
+        end
+        relsets
     end
-    relsets
 end
 
 
