@@ -146,14 +146,13 @@ function fromcex(trait::DSECex,
         datalines = data(cexsrc, "citerelationset")
         if isempty(datalines)
             @warn("No data found in source CEX.")
+        else
+            tripleset = map(line -> triple(line, delimiter = delimiter), datalines)
+            label = "Automatically assembled set of DSETriples"
+            cols = split(datalines[1], delimiter)
+            relseturn = Cite2Urn(cols[2]) |> dropobject
+            [DSECollection(relseturn, label, tripleset)]
         end
-
-        tripleset = map(line -> triple(line, delimiter = delimiter), datalines)
-        label = "Automatically assembled set of DSETriples"
-        cols = split(datalines[1], delimiter)
-        relseturn = Cite2Urn(cols[2]) |> dropobject
-        [DSECollection(relseturn, label, tripleset)]
-
     else
         impls = implementations(cexsrc, CitablePhysicalText.DSE_MODEL)
         if isempty(impls)
