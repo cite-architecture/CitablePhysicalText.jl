@@ -145,7 +145,7 @@ function fromcex(trait::DSECex,
         @warn("Lazily treating all relation set data as one DSECollection")
         datalines = data(cexsrc, "citerelationset")
         if isempty(datalines)
-            throw(DomainError("No citerelationset block found in source CEX."))
+            warn("No data found in source CEX.")
         end
 
         tripleset = map(line -> triple(line, delimiter = delimiter), datalines)
