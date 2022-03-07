@@ -128,7 +128,7 @@ function modelcex(dsec::DSECollection; delimiter = "|")
     join(["Collection", "Model", "Label", "Description"], delimiter),
     join([string(urn(dsec)), "urn:cite2:cite:datamodels.v1:dsemodel",  
     "Passage of text in a digital scholarly edition",
-    "Relations of text, manuscript page and documentary image for all edited texts"])
+    "Relations of text, manuscript page and documentary image for all edited texts"], delimiter)
     ]
     join(lines, "\n")
 end
