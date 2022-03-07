@@ -55,8 +55,7 @@ end
     """
     coll = DSECollection(dseurn, dselabel, triples(dataline))
 
-    expectedcex = "#!datamodels\nCollection|Model|Label|Description\nurn:cite2:hmt:dse.v1:msBil4urn:cite2:cite:datamodels.v1:dsemodelPassage of text in a digital scholarly editionRelations of text, manuscript page and documentary image for all edited texts\n\n#!citerelationset\nurn|urn:cite2:hmt:dse.v1:msBil4\nlabel|Collection of DSE records for Venetus A text of Proclus, Chrestomathy\npassage|imageroi|surface\nurn:cts:greekLit:tlg4036.tlg023.va:Homer.title|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1580,0.1633,0.4740,0.05302|urn:cite2:hmt:msA.v1:1r"
-    
+    expectedcex = "#!datamodels\nCollection|Model|Label|Description\nurn:cite2:hmt:dse.v1:msBil4|urn:cite2:cite:datamodels.v1:dsemodel|Passage of text in a digital scholarly edition|Relations of text, manuscript page and documentary image for all edited texts\n\n#!citerelationset\nurn|urn:cite2:hmt:dse.v1:msBil4\nlabel|Collection of DSE records for Venetus A text of Proclus, Chrestomathy\npassage|imageroi|surface\nurn:cts:greekLit:tlg4036.tlg023.va:Homer.title|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1580,0.1633,0.4740,0.05302|urn:cite2:hmt:msA.v1:1r"
     @test cex(coll) == expectedcex
 
     # Test lazy parsing:
@@ -69,4 +68,8 @@ end
     hmtdse = hmt[1]
     @test urn(hmtdse) == Cite2Urn("urn:cite2:hmt:hmtdse.v1:all")
     @test label(hmtdse) == "Homer Multitext project indexing of digital scholarly editions"
+
+
+
+
 end
