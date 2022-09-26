@@ -20,11 +20,17 @@ $(SIGNATURES)
 """
 function triple(src::AbstractString; delimiter = "|")
     parts = split(src, delimiter)
-    DSETriple(
-        CtsUrn(parts[1]),
-        Cite2Urn(parts[2]),
-        Cite2Urn(parts[3])
-    )
+    try
+        DSETriple(
+            CtsUrn(parts[1]),
+            Cite2Urn(parts[2]),
+            Cite2Urn(parts[3])
+        )
+    catch e
+        msg = "Failed to parse triple from $(src)"
+        @warn(msg)
+        throw(DomainError(msg))
+    end
 end
 
 
