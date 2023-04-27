@@ -1,7 +1,7 @@
 name = "CitablePhysicalText"
 uuid = "e38a874e-a7c2-4ff3-8dea-81ae2e5c9b07"
 authors = ["nsmith "]
-version = "0.9.5"
+version = "0.9.6"
 
 [deps]
 CitableBase = "d6f014bd-995c-41bd-9893-703339864534"

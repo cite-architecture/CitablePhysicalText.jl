@@ -13,7 +13,13 @@ The `CitablePhysicalText` package includes functions for querying a `DSECollecti
 using CitableBase
 using CitablePhysicalText
 f = joinpath(root, "test", "assets", "proclusdse.cex")
-dsecoll = fromcex(f, DSECollection, FileReader)
+dsecollectionlist = fromcex(f, DSECollection, FileReader)
+```
+
+The result is a (possibly empty) Vector of `DSECollection`s.  This data set has a single collection, which we'll now work with.
+
+```@example proclus
+dsecoll = dsecollectionlist[1]
 ```
 
 You can find the unique list of URNs for each field of the collection's triples with the functions `surfaces`, `images` and `texts`.
