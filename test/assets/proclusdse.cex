@@ -1,5 +1,11 @@
+#!datamodels
+Collection|Model|Label|Description
+urn:cite2:hmt:dse.v1:vaproclus|urn:cite2:cite:datamodels.v1:dsemodel|Relations of text, manuscript page and documentary image for text of Proclus in Venetus A.
+
+
+
 #!citerelationset
-urn|urn:cite2:hmt:dse.v1:msBil4
+urn|urn:cite2:hmt:dse.v1:vaproclus
 label|Collection of DSE records for Venetus text of Proclus, Chrestomathy
 passage|imageroi|surface
 

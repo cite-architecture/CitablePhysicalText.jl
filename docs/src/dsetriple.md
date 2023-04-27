@@ -4,8 +4,7 @@ Construct a `DSETriple` from a triple of URN values.
 
 ```@example triple
 using CitablePhysicalText
-using CitableObject
-using CitableText
+using CitableBase, CitableObject, CitableText
 
 psg = CtsUrn("urn:cts:trmilli:tl.25.v1:1")
 img = Cite2Urn("urn:cite2:lycian:hc.v1:2007.02.0003@0.04848,0.09494,0.7129,0.07528")
