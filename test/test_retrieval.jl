@@ -29,4 +29,7 @@
     @test length(passages(coll)) == 4
     @test length(passages(coll, keeppassage = false)) == 1
 
+
+    noversion = CtsUrn("urn:cts:greekLit:tlg4036.tlg023:Homer")
+    @test length(imagesfortext(noversion, coll; keepversion = false)) == 4
 end
