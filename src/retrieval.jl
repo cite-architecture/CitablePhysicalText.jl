@@ -20,8 +20,20 @@ end
 """Find surfaces for text passage(s) identified by URN.
 $(SIGNATURES)
 """
-function imagesfortext(txt::CtsUrn, dse::DSECollection; keepsubref = true)
-    triplelist = filter(trip -> urncontains(txt, passage(trip)), dse.data)
+function imagesfortext(txt::CtsUrn, dse::DSECollection; keepsubref = true, keepversion = true)
+    #triplelist = filter(trip -> urncontains(txt, passage(trip)), dse.data
+    #matched = keepsubref ? map(trip ->  image(trip), triplelist) : map(trip ->  dropsubref(passage(trip)), triplelist)
+    #unique(u -> string(u), matched)
+    @info("Txt $(txt)")
+    txturn = keepversion ? txt : dropversion(txt)
+    @info("Look for txturn $(txturn)")
+    triplelist = filter(dse.data) do tripl
+        if keepversion
+            urncontains(txturn, passage(tripl))
+        else
+            urncontains(txturn, dropversion(passage(tripl)))
+        end
+    end
     matched = keepsubref ? map(trip ->  image(trip), triplelist) : map(trip ->  dropsubref(passage(trip)), triplelist)
     unique(u -> string(u), matched)
 end
