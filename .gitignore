@@ -3,3 +3,5 @@ Manifest.toml
 docs/build/
 .vscode/
 scratch/
+_freeze/
+_site/
