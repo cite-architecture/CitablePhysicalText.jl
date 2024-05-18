@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 02c25e7f-cf76-4f9f-bd39-cb4680f4a387
+      url: 'https://neelsmith.quarto.pub/citablephysicaltext'
