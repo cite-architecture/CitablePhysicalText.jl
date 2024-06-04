@@ -37,6 +37,8 @@ website:
       contents: 
         - tutorials/index.qmd
         - tutorials/triples.qmd
+        - tutorials/dsecollection.qmd
+        - tutorials/querying.qmd
 
     - title: "Guides"
       contents:

@@ -2,7 +2,7 @@
 
 The `DSECollection` contains a human-readable label, and list of `DSETriple`s, and is identified by `Cite2Urn`.  You can construct one manually, as in this example.
 
-```@example coll
+```{julia}
 using CitablePhysicalText
 using CitableObject
 using CitableText
@@ -25,16 +25,16 @@ Alternatively, you can construct a `DSECollection` directly from a CEX source (a
 
 The `DSECollection` is a citable object, and therefore fufills traits for *citation*, *comparison using URN logic*, and *CEX serialization*, as you can verify with these functions from `CitableBase`.
 
-```@example coll
+```{julia}
 using CitableBase
 citable(coll)
 ```
 
-```@example coll
+```{julia}
 urncomparable(coll)
 ```
 
-```@example coll
+```{julia}
 cexserializable(coll)
 ```
 
@@ -44,11 +44,11 @@ cexserializable(coll)
 
 You can therefore apply the `urn` and `label` functions of `CitableBase` to it.
 
-```@example coll
+```{julia}
 urn(coll)
 ```
 
-```@example coll
+```{julia}
 label(coll)
 ```
 
@@ -56,19 +56,19 @@ label(coll)
 
 `DSECollection`s can be compared using URN logic.
 
-```@example coll
+```{julia}
 dupe = coll
 urnequals(coll, dupe)
 ```
 
 Since a `DSECollection` should be uniquely identified, however, it is more likely that you'll want to compare a URN to the `DSECollection`'s URN.
 
-```@example coll
+```{julia}
 common = dropobject(dseurn)
 urncontains(common, urn(coll))
 ```
 
-```@example coll
+```{julia}
 urnsimilar(common, urn(coll))
 ```
 
@@ -76,11 +76,11 @@ urnsimilar(common, urn(coll))
 
 
 
-```@example coll
+```{julia}
 collcex = cex(coll)
 ```
 
 
-```@example coll
+```{julia}
 fromcex(collcex, DSECollection) == coll
 ```
