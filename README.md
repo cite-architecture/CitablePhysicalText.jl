@@ -1,4 +1,3 @@
-![build](https://github.com/cite-architecture/CitablePhysicalText.jl/actions/workflows/Documentation.yml/badge.svg)
 
 
 # CitablePhysicalText.jl
