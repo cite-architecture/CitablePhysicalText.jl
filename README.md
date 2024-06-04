@@ -8,8 +8,4 @@ A julia module for working with digital scholarly editions following the DSE mod
 - a citable physical surface (such as a page of a manuscript, or face of an inscribed stone)
 - a citable documentary image illustrating the passage
 
-
-## Roadmap to 1.0
-
-
-- [x] 0.8.x Adds `MSPage` and `Codex` concrete types.
+See [documentation](https://neelsmith.quarto.pub/citablephysicaltext/)
