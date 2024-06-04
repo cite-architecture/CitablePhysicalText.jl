@@ -31,6 +31,13 @@ website:
       - icon: github
         href: https://github.com/hcmid/Orthography.jl
         aria-label: GitHub
+      - icon: person-circle
+        menu:
+          - text: "About me"
+            href: https://neelsmith.quarto.pub
+          - text: "More of my digital scholarship"
+            href: https://neelsmith.quarto.pub/digschol/
+        aria-label: Home
 
   sidebar:
     - title: "Tutorials"
