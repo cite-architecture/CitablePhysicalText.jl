@@ -2,8 +2,11 @@
 title: "Citable physical texts"
 ---
 
-Concepts and implementation in a Julia interface.
+A julia package for working with digital scholarly editions associating:
 
+- a citable passage of text
+- a citable physical surface (such as a page of a manuscript, or face of an inscribed stone)
+- a citable documentary image illustrating the passage
 
 | | Learning the package | Using the package |
 | --- | --- | --- |
