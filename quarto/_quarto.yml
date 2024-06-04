@@ -36,6 +36,7 @@ website:
     - title: "Tutorials"
       contents: 
         - tutorials/index.qmd
+        - tutorials/triples.qmd
 
     - title: "Guides"
       contents:

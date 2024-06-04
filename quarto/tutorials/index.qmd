@@ -2,4 +2,4 @@
 title: Tutorials
 ---
 
-Learn `CitablePhysicalText.jl`.
+Try one of these tutorials to start learning `CitablePhysicalText.jl`.
