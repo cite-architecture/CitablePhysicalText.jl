@@ -18,8 +18,6 @@
 end
 
 
-
-
 @testset "Test urn comparison trait on Page" begin
     u = Cite2Urn("urn:cite2:hmt:msA.v1:3r")
     coll = dropobject(u)
