@@ -50,6 +50,8 @@ website:
     - title: "Guides"
       contents:
         - guides/index.qmd
+        - guides/lazy.qmd
+        - guides/books.qmd
 
     - title: "Reference"
       contents: 
