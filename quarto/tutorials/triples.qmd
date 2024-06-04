@@ -1,8 +1,10 @@
 # The `DSETriple`
 
-Construct a `DSETriple` from a triple of URN values.
 
-```@example triple
+The key type for the package is the `DSETriple` that associates three URN values.  You can build one manually.
+
+
+```{julia}
 using CitablePhysicalText
 using CitableBase, CitableObject, CitableText
 
@@ -14,23 +16,21 @@ triple = DSETriple(psg, img, surf)
 
 Use these functions to extract particular fields.
 
-```@example triple
+```{julia}
 passage(triple)
 ```
-```@example triple
+```{julia}
 image(triple)
 ```
-```@example triple
+```{julia}
 surface(triple)
 ```
 
 
-!!! note "A note on URN comparison"
-
-    Note that since each component of the triple is a URN, you can test it with URN logic, as the following example illustrates.
+Note that since each component of the triple is a URN, you can test it with URN logic, as the following example illustrates.
 
 
-```@example triple
+```{julia}
 tl25 = CtsUrn("urn:cts:trmilli:tl.25.v1:")
 urncontains(tl25, passage(triple))
 ```
