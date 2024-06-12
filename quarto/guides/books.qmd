@@ -1,4 +1,0 @@
-# Specialized subtypes of DSE collection
-
-- Codex
-- Page

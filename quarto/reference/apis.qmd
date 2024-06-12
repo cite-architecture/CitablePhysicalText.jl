@@ -2,6 +2,10 @@
 title: "API documentation"
 ---
 
+
+
+## Relations of text, object and image
+
 `DSETriple`
 
 :::{.callout-note appearance="minimal"}
@@ -187,3 +191,79 @@ Retrieval:
 @doc imagesforsurface
 ```
 :::
+
+
+## Model of manuscript and pages
+
+`Codex`
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc Codex
+```
+:::
+
+`codex`
+
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc codex
+```
+:::
+
+
+`MSPage`
+
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc MSPage
+```
+:::
+
+
+`rectoverso`
+
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc rectoverso
+```
+:::
+
+
+`image`
+
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc image
+```
+:::
+
+
+`sequence`
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc sequence
+```
+:::
+
