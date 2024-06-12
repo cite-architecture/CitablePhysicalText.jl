@@ -22,7 +22,7 @@ This section is incomplete.
 
 
 
-## Example
+## Example: codex
 
 - we'll use an example from `test/assets` directory of package gh repo, and will instantiate from a CEX source using `fromcex` (from `CitableBase` q.v)
 
@@ -43,7 +43,7 @@ ms = mss[1]
 ```
 
 
-## A citable object
+### A citable object
 
 ```{julia}
 label(ms)
@@ -54,7 +54,7 @@ urn(ms)
 ```
 
 
-## An iterable collection
+### An iterable collection
 
 
 This is a Julia iterable that iterates pages.
@@ -83,4 +83,20 @@ length(ms)
 ```
 
 
+
+## Example: page
+
+
+```{julia}
+pg = collect(ms)[1]
+```
+
+```{julia}
+image(pg)
+```
+
+
+```{julia}
+rectoverso(pg)
+```
 
