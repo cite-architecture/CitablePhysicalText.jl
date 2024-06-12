@@ -46,4 +46,8 @@ end
     expected = "urn:cite2:hmt:msA.v1:3r|folio 3, recto|recto|urn:cite2:hmt:vaimg.2017a:VA003RN_0004|5"
     @test cex(pg) == expected
     @test fromcex(cex(pg), MSPage) == pg
+
+    @test rectoverso(pg) == "recto"
+    @test sequence(pg) == 5
+    @test image(pg) == img
 end

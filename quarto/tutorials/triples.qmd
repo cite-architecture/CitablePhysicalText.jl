@@ -1,4 +1,4 @@
-# The `DSETriple`
+# Texts, objects, images
 
 
 The key type for the package is the `DSETriple` that associates three URN values.  You can build one manually.

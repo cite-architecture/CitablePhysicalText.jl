@@ -1,19 +1,89 @@
-# `Codex` and `MSPage` types
+# Manuscripts and pages
+
+```{julia}
+#| output: false
+#| echo: false
+repo = pwd() |> dirname |> dirname
+```
 
 
 
 
- f = joinpath(pwd(), "assets", "burney86-sample.cex")
-    mss = fromcex(f, Codex, FileReader)
-    ms = mss[1]
-    @test eltype(ms) == MSPage
-    @test length(ms) == 9
-    @test typeof(collect(ms))  <: Vector
+::: {.callout-caution title="Documentation in progress"}
+This section is incomplete.
+:::
+
+
+## Overview
+
+- The `Codex` and `MSPage` types are specialized types of physical objects: individual pages related to a codex
+- each is a citable object, so `MSPage` can used in a triple set
+- page gives you relation to rest of codex
+
+
+
+## Example
+
+- we'll use an example from `test/assets` directory of package gh repo, and will instantiate from a CEX source using `fromcex` (from `CitableBase` q.v)
+
+```{julia}
+#| output: false
+f = joinpath(repo, "test", "assets", "burney86-sample.cex")
+```
+
+```{julia}
+using CitablePhysicalText, CitableBase
+mss = fromcex(f, Codex, FileReader)
+```
+
+There's only 1 MS in this collection.
+
+```{julia}
+ms = mss[1]
+```
+
+
+## A citable object
+
+```{julia}
+label(ms)
+```
+
+```{julia}
+urn(ms)
+```
+
+
+## An iterable collection
+
+
+This is a Julia iterable that iterates pages.
+
+```{julia}
+eltype(ms) 
+```
+
+
+```{julia}
+
+for pg in ms
+    @info(label(pg))
+end
+```
+
+
+
+```{julia}
+collect(ms)[1]
+```
+
+
+```{julia}
+length(ms)
+```
+
+
     @test length(filter(p -> p.rv == "recto", ms) |> collect) == 5
     @test reverse(ms)[1] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:5r")
 
-    windoid =  slidingwindow(ms)
-    @test windoid[1][1] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:1r")
-    @test windoid[end][2] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:5r")
 
-    

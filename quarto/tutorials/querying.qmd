@@ -1,5 +1,5 @@
 
-# Searching `DSECollection`s
+# Searching collections of triples
 
 
 ## Finding unique values for each field of a `DSETriple`

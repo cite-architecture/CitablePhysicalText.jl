@@ -4,9 +4,30 @@ struct MSPage <: TextBearingSurface
     label::AbstractString
     rv::AbstractString
     image::Cite2Urn
-    sequence::Int64
+    sequence::Integer
 end
 
+"""Find recto or verso value for page.
+$(SIGNATURES)
+"""
+function rectoverso(pg::MSPage)
+    pg.rv
+end
+
+"""Find image illustrating page.
+$(SIGNATURES)
+"""
+function image(pg::MSPage)::Cite2Urn
+    pg.image
+end
+
+
+"""Find sequence of page within a codex.
+$(SIGNATURES)
+"""
+function sequence(pg::MSPage)
+    pg.sequence
+end
 
 """Override `show` for `MSPage`
 $(SIGNATURES)
