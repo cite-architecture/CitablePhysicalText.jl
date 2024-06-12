@@ -5,7 +5,7 @@ theme: spacelab
 execute:
   freeze: auto
 date: last-modified  
-margin-header: "⚠️ *Draft release.*"
+margin-header: "Package version: `0.10.0`"
 format:
   html: 
     toc: true
@@ -43,9 +43,12 @@ website:
     - title: "Tutorials"
       contents: 
         - tutorials/index.qmd
+        - text: "---"
         - tutorials/triples.qmd
         - tutorials/dsecollection.qmd
         - tutorials/querying.qmd
+        - text: "---"
+        - tutorials/codex.qmd
 
     - title: "Guides"
       contents:

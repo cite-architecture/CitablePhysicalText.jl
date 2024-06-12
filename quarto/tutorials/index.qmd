@@ -3,3 +3,18 @@ title: Tutorials
 ---
 
 Try one of these tutorials to start learning `CitablePhysicalText.jl`.
+
+:::: {.columns}
+
+::: {.column width="40%"}
+generic
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+special cases
+:::
+
+::::
