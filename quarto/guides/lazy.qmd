@@ -1,0 +1,24 @@
+# Lazy and strict reading of CEX sources
+
+- lazy: a single cite relations block
+- strict: full metadata for one or more sources
+
+```{julia}
+root = pwd() |> dirname |> dirname
+```
+
+We'll read a single, large DSE collection from a file
+
+```{julia}
+src = joinpath(root, "test","assets", "hmt-2022k.cex")
+
+using CitablePhysicalText
+using CitableBase
+dsev = fromcex(src,DSECollection,FileReader)
+#lazydsev = fromcex(src,DSECollection,FileReader; strict = false)
+```
+
+
+```{julia}
+dsev[1] |> typeof
+```

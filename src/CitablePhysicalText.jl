@@ -46,7 +46,7 @@ export textsforsurface, textsforimage
 export surfacesfortext, surfacesforimage
 export imagesfortext, imagesforsurface
 
-export MSPage
+export MSPage, sequence, image, rectoverso
 export Codex, codex
 
 

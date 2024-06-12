@@ -69,8 +69,9 @@ end
     @test length(filter(p -> p.rv == "recto", ms) |> collect) == 5
     @test reverse(ms)[1] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:5r")
 
-    windoid =  slidingwindow(ms)
-    @test windoid[1][1] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:1r")
-    @test windoid[end][2] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:5r")
+    # This has moved to a different package:
+    #windoid =  slidingwindow(ms)
+    #@test windoid[1][1] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:1r")
+    #@test windoid[end][2] |> urn == Cite2Urn("urn:cite2:citebl:burney86pages.v1:5r")
 end
 

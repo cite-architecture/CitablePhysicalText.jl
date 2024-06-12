@@ -1,0 +1,33 @@
+---
+title: Tutorials
+---
+
+Try one of these tutorials to start learning `CitablePhysicalText.jl`.
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+
+**Generic relations**
+
+[Text/object/image](./triples.qmd)
+
+[Collections of triple sets](./dsecollection.qmd)
+
+[Searching collections of triples](./querying.qmd)
+
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+**Specialized types**
+
+[Codices and pages](./codex.qmd)
+
+:::
+
+::::

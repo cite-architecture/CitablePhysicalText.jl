@@ -1,0 +1,269 @@
+---
+title: "API documentation"
+---
+
+
+
+## Relations of text, object and image
+
+`DSETriple`
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+using CitablePhysicalText
+@doc DSETriple
+```
+:::
+
+
+`triple`
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc triple
+```
+:::
+
+`triples` 
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc triples
+```
+:::
+
+`passage`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc passage
+```
+:::
+
+
+`image`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc image
+```
+:::
+
+
+`surface`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc surface
+```
+:::
+
+
+`DSECollection`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc DSECollection
+```
+:::
+
+
+
+Retrieval:
+
+
+`surfaces`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc surfaces
+```
+:::
+
+
+`passages`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc passages
+```
+:::
+
+
+`images`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc images
+```
+:::
+
+`textsforsurface`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc textsforsurface
+```
+:::
+
+`textsforimage`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc textsforimage
+```
+:::
+
+`surfacesfortext`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc surfacesfortext
+```
+:::
+
+`surfacesforimage`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc surfacesforimage
+```
+:::
+
+`imagesfortext`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc imagesfortext
+```
+:::
+
+`imagesforsurface`
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc imagesforsurface
+```
+:::
+
+
+## Model of manuscript and pages
+
+`Codex`
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc Codex
+```
+:::
+
+`codex`
+
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc codex
+```
+:::
+
+
+`MSPage`
+
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc MSPage
+```
+:::
+
+
+`rectoverso`
+
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc rectoverso
+```
+:::
+
+
+`image`
+
+
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc image
+```
+:::
+
+
+`sequence`
+
+:::{.callout-note appearance="minimal"}
+```{julia}
+#| echo: false
+#| warning: false
+@doc sequence
+```
+:::
+
