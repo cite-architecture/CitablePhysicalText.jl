@@ -1,3 +1,7 @@
+---
+engine: julia
+---
+
 # Lazy and strict reading of CEX sources
 
 - lazy: a single cite relations block

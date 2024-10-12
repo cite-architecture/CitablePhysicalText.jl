@@ -1,5 +1,6 @@
 ---
 title: Tutorials
+engine: julia
 ---
 
 Try one of these tutorials to start learning `CitablePhysicalText.jl`.

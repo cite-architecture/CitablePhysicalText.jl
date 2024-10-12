@@ -1,5 +1,6 @@
 ---
 title: "Citable physical texts"
+engine: julia
 ---
 
 A julia package for working with digital scholarly editions associating:
