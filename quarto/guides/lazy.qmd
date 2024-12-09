@@ -4,10 +4,17 @@ engine: julia
 
 # Lazy and strict reading of CEX sources
 
+You can instantiate a `DSECollection` from a delimited-text data source using the `fromcex` method.
+
+
 - lazy: a single cite relations block
 - strict: full metadata for one or more sources
 
 ```{julia}
+#| echo: false
+#| output: false
+#| warning: false
+
 root = pwd() |> dirname |> dirname
 ```
 
