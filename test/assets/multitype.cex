@@ -8,7 +8,8 @@ urn:cite2:citebl:burney86pages.v1:|urn:cite2:hmt:datamodels.v1:codexmodel|HMT pr
 
 #!citecollections
 URN|Description|Labelling property|Ordering property|License
-urn:cite2:citebl:burney86pages.v1:|Burney 86 manuscript|urn:cite2:citebl:burney$
+urn:cite2:citebl:burney86pages.v1:|Burney 86 manuscript|urn:cite2:citebl:burney86pages.v1.label:|urn:cite2:citebl:burney86pages.v1.sequence:|CC-attribution-share-alike
+
 
 #!citeproperties
 Property|Label|Type|Authority list
