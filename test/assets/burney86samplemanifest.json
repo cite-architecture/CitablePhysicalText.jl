@@ -1,4 +1,4 @@
-{ "@context": "http://iiif.io/api/presentation/3/context.json", "id": "https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/dev/test/assets/burney86samplemanifest.json", "type": "Manifest", "label": { "en": [ "Burney 86 manuscript" ] }, "items": [ {
+{ "@context": "http://iiif.io/api/presentation/3/context.json", "id": "https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json", "type": "Manifest", "label": { "en": [ "Burney 86 manuscript" ] }, "items": [ {
     "id": "canvases/1r",
     "type": "Canvas",
     "label": {
