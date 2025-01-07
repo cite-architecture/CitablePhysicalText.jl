@@ -67,7 +67,7 @@ Every manifest must have a unique
 
 
 ```{julia}
-manifesturl = "https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/dev/test/assets/burney86samplemanifest.json"
+manifesturl = "https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json"
 conf = iiifconfig(manifesturl)
 ```
 
@@ -99,6 +99,10 @@ end
 
 We've pushed this to our repository so that it is available at this URL:
 
-`https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/dev/test/assets/burney86samplemanifest.json`
+`https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json`
 
 Use that with any IIIF viewer (like [these](https://iiif.io/get-started/iiif-viewers/)).
+
+Here's our manifest displayed in the Tify viewer:
+
+![](./imgs/iiif-tify.png)
