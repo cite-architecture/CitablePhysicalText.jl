@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-01-06">
 
-<title>Citable physical texts – CitablePhysicalText</title>
+<title>querying – CitablePhysicalText</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,25 +21,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8fdb60cc607797eed9f9084820682789.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8fdb60cc607797eed9f9084820682789.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CitablePhysicalText</span>
     </a>
   </div>
@@ -89,23 +123,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./concepts/index.html"> 
+    <a class="nav-link" href="../concepts/index.html"> 
 <span class="menu-text">Concepts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials/index.html"> 
+    <a class="nav-link active" href="../tutorials/index.html" aria-current="page"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./guides/index.html"> 
+    <a class="nav-link" href="../guides/index.html"> 
 <span class="menu-text">Guides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reference/index.html"> 
+    <a class="nav-link" href="../reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
 </ul>
@@ -143,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Citable physical texts</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/querying.html">Searching collections of triples</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -157,8 +191,40 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Citable physical texts</span></a>
+  <a href="../tutorials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tutorials</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/triples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Texts, objects, images</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/dsecollection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collections of triple sets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/querying.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Searching collections of triples</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/codex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manuscripts and pages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tutorials</span></a>
   </div>
 </li>
     </ul>
@@ -169,14 +235,23 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>Package version: <code>0.12.0</code></p>
 </div></div>
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#searching-collections-of-triples" id="toc-searching-collections-of-triples" class="nav-link active" data-scroll-target="#searching-collections-of-triples">Searching collections of triples</a>
+  <ul class="collapse">
+  <li><a href="#finding-unique-values-for-each-field-of-a-dsetriple" id="toc-finding-unique-values-for-each-field-of-a-dsetriple" class="nav-link" data-scroll-target="#finding-unique-values-for-each-field-of-a-dsetriple">Finding unique values for each field of a <code>DSETriple</code></a></li>
+  <li><a href="#querying-by-field" id="toc-querying-by-field" class="nav-link" data-scroll-target="#querying-by-field">Querying by field</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Citable physical texts</h1>
 </div>
 
 
@@ -199,35 +274,203 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A julia package for working with digital scholarly editions associating:</p>
-<ul>
-<li>a citable passage of text</li>
-<li>a citable physical surface (such as a page of a manuscript, or face of an inscribed stone)</li>
-<li>a citable documentary image illustrating the passage</li>
-</ul>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Learning the package</th>
-<th>Using the package</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Hands-on</strong></td>
-<td>Try a <a href="./tutorials/">tutorial</a> to start using the package</td>
-<td>Find <a href="./guides/">recipes</a> for specific tasks</td>
-</tr>
-<tr class="even">
-<td><strong>Cognition</strong></td>
-<td>Learn <a href="./concepts/">concepts</a></td>
-<td>See <a href="./reference/">reference information</a> (including API documentation for all exported functions)</td>
-</tr>
-</tbody>
-</table>
+<section id="searching-collections-of-triples" class="level1">
+<h1>Searching collections of triples</h1>
+<section id="finding-unique-values-for-each-field-of-a-dsetriple" class="level2">
+<h2 class="anchored" data-anchor-id="finding-unique-values-for-each-field-of-a-dsetriple">Finding unique values for each field of a <code>DSETriple</code></h2>
+<p>The <code>CitablePhysicalText</code> package includes functions for querying a <code>DSECollection</code>. We’ll load a sample dataset from the file <code>test/assets/proclusdse.cex</code> in this github repository.</p>
+<div id="4" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CitableBase</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CitablePhysicalText</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="fu">joinpath</span>(root, <span class="st">"test"</span>, <span class="st">"assets"</span>, <span class="st">"proclusdse.cex"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>dsecollectionlist <span class="op">=</span> <span class="fu">fromcex</span>(f, DSECollection, FileReader)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>1-element Vector{DSECollection}:
+ urn:cite2:hmt:dse.v1:vaproclus Collection of DSE records for Venetus text of Proclus, Chrestomathy</code></pre>
+</div>
+</div>
+<p>The result is a (possibly empty) Vector of <code>DSECollection</code>s. This data set has a single collection, which we’ll now work with.</p>
+<div id="6" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dsecoll <span class="op">=</span> dsecollectionlist[<span class="fl">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>urn:cite2:hmt:dse.v1:vaproclus Collection of DSE records for Venetus text of Proclus, Chrestomathy</code></pre>
+</div>
+</div>
+<p>You can find the unique list of URNs for each field of the collection’s triples with the functions <code>surfaces</code>, <code>images</code> and <code>texts</code>.</p>
+<div id="8" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">surfaces</span>(dsecoll)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>5-element Vector{CitableObject.Cite2Urn}:
+ urn:cite2:hmt:msA.v1:1r
+ urn:cite2:hmt:msA.v1:1v
+ urn:cite2:hmt:msA.v1:6r
+ urn:cite2:hmt:msA.v1:6v
+ urn:cite2:hmt:msA.v1:4r</code></pre>
+</div>
+</div>
+<p>The <code>images</code> function has an optional parameter defining whether or not to include subreferences.</p>
+<div id="10" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">images</span>(dsecoll, keepsubref <span class="op">=</span> <span class="cn">false</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>5-element Vector{CitableObject.Cite2Urn}:
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002
+ urn:cite2:hmt:vaimg.2017a:VA001VN_0503
+ urn:cite2:hmt:vaimg.2017a:VA006RN_0007
+ urn:cite2:hmt:vaimg.2017a:VA006VN_0508
+ urn:cite2:hmt:vaimg.2017a:VA004RN_0005</code></pre>
+</div>
+</div>
+<p>Similarly, the <code>passages</code> function has an optional parameter defining whether or not to include the passage component.</p>
+<div id="12" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">passages</span>(dsecoll, keeppassage <span class="op">=</span> <span class="cn">false</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>1-element Vector{CitableText.CtsUrn}:
+ urn:cts:greekLit:tlg4036.tlg023.va:</code></pre>
+</div>
+</div>
+</section>
+<section id="querying-by-field" class="level2">
+<h2 class="anchored" data-anchor-id="querying-by-field">Querying by field</h2>
+<p>The following functions find values for one field of a <code>DSETriple</code> filtered by another field.</p>
+<p>Find all text passages on a given surface:</p>
+<div id="14" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CitableObject</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>page <span class="op">=</span> <span class="fu">Cite2Urn</span>(<span class="st">"urn:cite2:hmt:msA.v1:1r"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">textsforsurface</span>(page, dsecoll)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>21-element Vector{CitableText.CtsUrn}:
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.title
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.1
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.2
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.3
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.4
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.5
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.6
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.7
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.8
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.9
+ ⋮
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.12
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.13
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.14
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.15
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.16
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.17
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.18
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.19
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.20@ἀλλὰ-20@ταῦτα[2]</code></pre>
+</div>
+</div>
+<p>Find all text passages indexed to a given image:</p>
+<div id="16" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> <span class="fu">Cite2Urn</span>(<span class="st">"urn:cite2:hmt:vaimg.2017a:VA001RN_0002"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">textsforimage</span>(img, dsecoll)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>21-element Vector{CitableText.CtsUrn}:
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.title
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.1
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.2
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.3
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.4
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.5
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.6
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.7
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.8
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.9
+ ⋮
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.12
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.13
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.14
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.15
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.16
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.17
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.18
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.19
+ urn:cts:greekLit:tlg4036.tlg023.va:Homer.20@ἀλλὰ-20@ταῦτα[2]</code></pre>
+</div>
+</div>
+<p>Find what pages a text occurs on:</p>
+<div id="18" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CitableText</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>homer <span class="op">=</span> <span class="fu">CtsUrn</span>(<span class="st">"urn:cts:greekLit:tlg4036.tlg023.va:Homer"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">surfacesfortext</span>(homer, dsecoll)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>2-element Vector{Cite2Urn}:
+ urn:cite2:hmt:msA.v1:1r
+ urn:cite2:hmt:msA.v1:1v</code></pre>
+</div>
+</div>
+<p>Find what images illustrate a text:</p>
+<div id="20" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>homer <span class="op">=</span> <span class="fu">CtsUrn</span>(<span class="st">"urn:cts:greekLit:tlg4036.tlg023.va:Homer"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">imagesfortext</span>(homer, dsecoll)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[ Info: Txt urn:cts:greekLit:tlg4036.tlg023.va:Homer
+[ Info: Look for txturn urn:cts:greekLit:tlg4036.tlg023.va:Homer</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>41-element Vector{Cite2Urn}:
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1580,0.1633,0.4740,0.05302
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1335,0.2054,0.4637,0.04139
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1553,0.2292,0.4508,0.04678
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1449,0.2620,0.4641,0.05869
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1456,0.3069,0.4667,0.06620
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.3514,0.4637,0.06904
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.4002,0.4627,0.05132
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1487,0.4278,0.4627,0.04069
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1464,0.4653,0.4724,0.05217
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1468,0.5138,0.3439,0.02155
+ ⋮
+ urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4219,0.3513,0.4438,0.04122
+ urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.3996,0.3874,0.4818,0.02254
+ urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4237,0.4058,0.3047,0.01867
+ urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4237,0.4051,0.4422,0.04965
+ urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4202,0.4328,0.4388,0.03734
+ urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4228,0.4506,0.4405,0.03804
+ urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4245,0.4649,0.4438,0.07344
+ urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4219,0.5111,0.4525,0.05851
+ urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4232,0.5426,0.4416,0.04149</code></pre>
+</div>
+</div>
+<p>Find surfaces illustrated by an image:</p>
+<div id="22" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">surfacesforimage</span>(img, dsecoll)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>1-element Vector{Cite2Urn}:
+ urn:cite2:hmt:msA.v1:1r</code></pre>
+</div>
+</div>
+<p>Find images illustrating a surface;</p>
+<div id="24" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imagesforsurface</span>(page, dsecoll)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>20-element Vector{Cite2Urn}:
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1580,0.1633,0.4740,0.05302
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1335,0.2054,0.4637,0.04139
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1553,0.2292,0.4508,0.04678
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1449,0.2620,0.4641,0.05869
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1456,0.3069,0.4667,0.06620
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.3514,0.4637,0.06904
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.4002,0.4627,0.05132
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1487,0.4278,0.4627,0.04069
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1464,0.4653,0.4724,0.05217
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1468,0.5138,0.3439,0.02155
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1414,0.5149,0.4675,0.03955
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1456,0.5278,0.4605,0.03884
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1441,0.5447,0.4631,0.03672
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1437,0.5611,0.4654,0.03572
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1468,0.5801,0.4603,0.04820
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1407,0.6104,0.4757,0.05089
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.2964,0.6418,0.3163,0.01744
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1502,0.6574,0.2456,0.02056
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1382,0.6532,0.4703,0.04111
+ urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1401,0.6741,0.4721,0.1121</code></pre>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

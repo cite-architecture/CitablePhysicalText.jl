@@ -1,0 +1,232 @@
+[
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Reference",
+    "section": "",
+    "text": "see API documentation",
+    "crumbs": [
+      "Reference"
+    ]
+  },
+  {
+    "objectID": "tutorials/dsecollection.html",
+    "href": "tutorials/dsecollection.html",
+    "title": "Collections of triple sets",
+    "section": "",
+    "text": "The DSECollection contains a human-readable label, and list of DSETriples, and is identified by Cite2Urn. You can construct one manually, as in this example.\n\nusing CitablePhysicalText\nusing CitableObject\nusing CitableText\n\ndseurn = Cite2Urn(\"urn:cite2:hmt:dse.v1:msBil4\")\ndselabel = \"Collection of DSE records for Venetus A text of Proclus, Chrestomathy\"\n\ntriplelines = \"\"\"urn:cts:greekLit:tlg4036.tlg023.va:Homer.title|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1580,0.1633,0.4740,0.05302|urn:cite2:hmt:msA.v1:1r\nurn:cts:greekLit:tlg4036.tlg023.va:Homer.1|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1335,0.2054,0.4637,0.04139|urn:cite2:hmt:msA.v1:1r\nurn:cts:greekLit:tlg4036.tlg023.va:Homer.2|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1553,0.2292,0.4508,0.04678|urn:cite2:hmt:msA.v1:1r\nurn:cts:greekLit:tlg4036.tlg023.va:Homer.3|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1449,0.2620,0.4641,0.05869|urn:cite2:hmt:msA.v1:1r\n\"\"\"\ntriplelist = triples(triplelines)\ncoll = DSECollection(dseurn, dselabel, triplelist)\n\nurn:cite2:hmt:dse.v1:msBil4 Collection of DSE records for Venetus A text of Proclus, Chrestomathy\n\n\nAlternatively, you can construct a DSECollection directly from a CEX source (as illustrated below, and on the following page).\n\n\nThe DSECollection is a citable object, and therefore fufills traits for citation, comparison using URN logic, and CEX serialization, as you can verify with these functions from CitableBase.\n\nusing CitableBase\ncitable(coll)\n\ntrue\n\n\n\nurncomparable(coll)\n\ntrue\n\n\n\ncexserializable(coll)\n\ntrue\n\n\n\n\nYou can therefore apply the urn and label functions of CitableBase to it.\n\nurn(coll)\n\nurn:cite2:hmt:dse.v1:msBil4\n\n\n\nlabel(coll)\n\n\"Collection of DSE records for Venetus A text of Proclus, Chrestomathy\"\n\n\n\n\n\nDSECollections can be compared using URN logic.\n\ndupe = coll\nurnequals(coll, dupe)\n\ntrue\n\n\nSince a DSECollection should be uniquely identified, however, it is more likely that you’ll want to compare a URN to the DSECollection’s URN.\n\ncommon = dropobject(dseurn)\nurncontains(common, urn(coll))\n\ntrue\n\n\n\nurnsimilar(common, urn(coll))\n\ntrue\n\n\n\n\n\n\ncollcex = cex(coll)\n\n\"#!datamodels\\nCollection|Model|Label|Description\\nurn:cite2:hmt:dse.v1:msBil4|urn:cite2:cite:datamodels.v1:dsemodel|Passage of text in a digital scholarly edition|Relations of text, manuscript page and documentary image for all edited texts\\n\\n#!citerelationset\\nurn|urn:cite2\" ⋯ 393 bytes ⋯ \"\\nurn:cts:greekLit:tlg4036.tlg023.va:Homer.2|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1553,0.2292,0.4508,0.04678|urn:cite2:hmt:msA.v1:1r\\nurn:cts:greekLit:tlg4036.tlg023.va:Homer.3|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1449,0.2620,0.4641,0.05869|urn:cite2:hmt:msA.v1:1r\"\n\n\n\nfromcex(collcex, DSECollection) == coll\n\nfalse",
+    "crumbs": [
+      "Tutorials",
+      "Collections of triple sets"
+    ]
+  },
+  {
+    "objectID": "tutorials/dsecollection.html#a-citable-object",
+    "href": "tutorials/dsecollection.html#a-citable-object",
+    "title": "Collections of triple sets",
+    "section": "",
+    "text": "The DSECollection is a citable object, and therefore fufills traits for citation, comparison using URN logic, and CEX serialization, as you can verify with these functions from CitableBase.\n\nusing CitableBase\ncitable(coll)\n\ntrue\n\n\n\nurncomparable(coll)\n\ntrue\n\n\n\ncexserializable(coll)\n\ntrue\n\n\n\n\nYou can therefore apply the urn and label functions of CitableBase to it.\n\nurn(coll)\n\nurn:cite2:hmt:dse.v1:msBil4\n\n\n\nlabel(coll)\n\n\"Collection of DSE records for Venetus A text of Proclus, Chrestomathy\"\n\n\n\n\n\nDSECollections can be compared using URN logic.\n\ndupe = coll\nurnequals(coll, dupe)\n\ntrue\n\n\nSince a DSECollection should be uniquely identified, however, it is more likely that you’ll want to compare a URN to the DSECollection’s URN.\n\ncommon = dropobject(dseurn)\nurncontains(common, urn(coll))\n\ntrue\n\n\n\nurnsimilar(common, urn(coll))\n\ntrue\n\n\n\n\n\n\ncollcex = cex(coll)\n\n\"#!datamodels\\nCollection|Model|Label|Description\\nurn:cite2:hmt:dse.v1:msBil4|urn:cite2:cite:datamodels.v1:dsemodel|Passage of text in a digital scholarly edition|Relations of text, manuscript page and documentary image for all edited texts\\n\\n#!citerelationset\\nurn|urn:cite2\" ⋯ 393 bytes ⋯ \"\\nurn:cts:greekLit:tlg4036.tlg023.va:Homer.2|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1553,0.2292,0.4508,0.04678|urn:cite2:hmt:msA.v1:1r\\nurn:cts:greekLit:tlg4036.tlg023.va:Homer.3|urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1449,0.2620,0.4641,0.05869|urn:cite2:hmt:msA.v1:1r\"\n\n\n\nfromcex(collcex, DSECollection) == coll\n\nfalse",
+    "crumbs": [
+      "Tutorials",
+      "Collections of triple sets"
+    ]
+  },
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Try one of these tutorials to start learning CitablePhysicalText.jl.\n\n\nGeneric relations\nText/object/image\nCollections of triple sets\nSearching collections of triples\n\n\n\nSpecialized types\nCodices and pages\nGenerate IIIF Manifests for a codex",
+    "crumbs": [
+      "Tutorials"
+    ]
+  },
+  {
+    "objectID": "tutorials/iiif.html",
+    "href": "tutorials/iiif.html",
+    "title": "Generating IIIF manifests for a codex",
+    "section": "",
+    "text": "When you model a codex, you document each page with an image. If the images are available from a server supporting the image serving protocol of the IIIF (International Image Interoperability Framework), you can easily share a catalog of the images as a IIIF Presentation Manifest presenting the sequence of the manuscript’s pages in order. In this tutorial, we’ll see how to use the iiifmanifest function to create a IIIF manifest for a codex, then serve the manifest from a platform like github to use it from anyone’s IIIF application.\n\n\n\n\n\n\nTo learn more\n\n\n\n\nSee this tutorial to get started with codices (books) and pages.\nSeen an introduction to how the IIIF protocols work\n\n\n\n\n\nWe need:\n\nthe data from the codex model\nthe IIIF image service where the images are available\ninformation for configuring the Manifest.\n\n\n\nWe’ll read the sample model of a codex from a file in this project’s github repository. See this tutorial for more details.\n\nusing CitablePhysicalText, CitableBase\nf = joinpath(repo, \"test\", \"assets\", \"burney86-sample.cex\")\nms = fromcex(f, Codex, FileReader)[1]\n\n\n\n\nWe’ll use the IIIFservice type from the CitableImage package: see the package documentation for more details.\n\nusing CitableImage\nimgsvc_baseurl = \"http://www.homermultitext.org/iipsrv\"\nimgsvc_root = \"/project/homer/pyramidal/deepzoom\"\nimgsvc = IIIFservice(imgsvc_baseurl, imgsvc_root)\n\nIIIFservice(\"http://www.homermultitext.org/iipsrv\", \"/project/homer/pyramidal/deepzoom\")\n\n\n\n\n\nEvery manifest must have a unique\n\nmanifesturl = \"https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json\"\nconf = iiifconfig(manifesturl)\n\nConfiguration for IIIF manifest with ID https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json\n\n\n\n\n\n\n\n\nManually conifguring IDs\n\n\n\nYou can use the IIIFConfig object to manually configure many values in the IIIF Presentation Manifest. The manifest identifies a series of Canvas objects, each containing an AnnotationPage, which in turn contains an Annotation to paint the containing Canvas. You can configure collection names for each of these types of objects. See details in the API documentation.\n\n\n\n\n\nWith these parameters defined, we can get the JSON text of a manifest for our codex:\n\nmanifestjson = iiifmanifest(ms, conf, imgsvc)\n\n\n\n\nNow all we need to do is serve the text on the internet, preferably with support for COR. Github can do this for us: we’ll write the output to the same directory where we kept our source data for the codex.\n\noutfile = joinpath(repo, \"test\", \"assets\", \"burney86samplemanifest.json\")\nopen(outfile,\"w\") do io\n    write(io, manifestjson)\nend\n\nWe’ve pushed this to our repository so that it is available at this URL:\nhttps://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json\nUse that with any IIIF viewer (like these).\nHere’s our manifest displayed in the Tify viewer:"
+  },
+  {
+    "objectID": "tutorials/iiif.html#prerequisites",
+    "href": "tutorials/iiif.html#prerequisites",
+    "title": "Generating IIIF manifests for a codex",
+    "section": "",
+    "text": "We need:\n\nthe data from the codex model\nthe IIIF image service where the images are available\ninformation for configuring the Manifest.\n\n\n\nWe’ll read the sample model of a codex from a file in this project’s github repository. See this tutorial for more details.\n\nusing CitablePhysicalText, CitableBase\nf = joinpath(repo, \"test\", \"assets\", \"burney86-sample.cex\")\nms = fromcex(f, Codex, FileReader)[1]\n\n\n\n\nWe’ll use the IIIFservice type from the CitableImage package: see the package documentation for more details.\n\nusing CitableImage\nimgsvc_baseurl = \"http://www.homermultitext.org/iipsrv\"\nimgsvc_root = \"/project/homer/pyramidal/deepzoom\"\nimgsvc = IIIFservice(imgsvc_baseurl, imgsvc_root)\n\nIIIFservice(\"http://www.homermultitext.org/iipsrv\", \"/project/homer/pyramidal/deepzoom\")\n\n\n\n\n\nEvery manifest must have a unique\n\nmanifesturl = \"https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json\"\nconf = iiifconfig(manifesturl)\n\nConfiguration for IIIF manifest with ID https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json\n\n\n\n\n\n\n\n\nManually conifguring IDs\n\n\n\nYou can use the IIIFConfig object to manually configure many values in the IIIF Presentation Manifest. The manifest identifies a series of Canvas objects, each containing an AnnotationPage, which in turn contains an Annotation to paint the containing Canvas. You can configure collection names for each of these types of objects. See details in the API documentation.\n\n\n\n\n\nWith these parameters defined, we can get the JSON text of a manifest for our codex:\n\nmanifestjson = iiifmanifest(ms, conf, imgsvc)\n\n\n\n\nNow all we need to do is serve the text on the internet, preferably with support for COR. Github can do this for us: we’ll write the output to the same directory where we kept our source data for the codex.\n\noutfile = joinpath(repo, \"test\", \"assets\", \"burney86samplemanifest.json\")\nopen(outfile,\"w\") do io\n    write(io, manifestjson)\nend\n\nWe’ve pushed this to our repository so that it is available at this URL:\nhttps://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json\nUse that with any IIIF viewer (like these).\nHere’s our manifest displayed in the Tify viewer:"
+  },
+  {
+    "objectID": "concepts/index.html",
+    "href": "concepts/index.html",
+    "title": "Concepts",
+    "section": "",
+    "text": "The CitablePhysicalText module works with texts in the context of a physical surface — a manuscript page, surface of an inscription, or column of a papyrus, for example — that is illustrated by documentary images. Its fundamental data structure, the DSETriple, associates triplets of text, surface and image. The type is named DSETriple because this model is essential for a Diplomatic Scholarly Edition. Each component of the triple is a citable scholarly resources: the text is identified by CtsUrn; the surface and image are identified by Cite2Urn.\nThe DSECollection is a citable object (as defined in CitableBase): it is identified by a URN, and has a human-readable label. It also has a list of DSETriples, and functions for querying the triples using URN logic.",
+    "crumbs": [
+      "Concepts"
+    ]
+  },
+  {
+    "objectID": "guides/lazy.html",
+    "href": "guides/lazy.html",
+    "title": "Lazy and strict reading of CEX sources",
+    "section": "",
+    "text": "Lazy and strict reading of CEX sources\nYou can instantiate a DSECollection from a delimited-text data source using the fromcex method.\n\nlazy: a single cite relations block\nstrict: full metadata for one or more sources\n\nWe’ll read a single, large DSE collection from a file\n\nsrc = joinpath(root, \"test\",\"assets\", \"hmt-2022k.cex\")\n\nusing CitablePhysicalText\nusing CitableBase\ndsev = fromcex(src,DSECollection,FileReader)\n#lazydsev = fromcex(src,DSECollection,FileReader; strict = false)\n\nPrecompiling CitablePhysicalText...\n    908.5 ms  ✓ Clustering\n   1062.3 ms  ✓ MacroTools\n    551.3 ms  ✓ SimpleTraits\n    736.2 ms  ✓ Setfield\n   1320.4 ms  ✓ ImageAxes\n    971.5 ms  ✓ ImageMetadata\n   2378.8 ms  ✓ Graphs\n    872.1 ms  ✓ SimpleWeightedGraphs\n   1344.3 ms  ✓ Netpbm\n   9958.3 ms  ✓ Polynomials\n   1029.7 ms  ✓ Polynomials → PolynomialsChainRulesCoreExt\n   1008.0 ms  ✓ Polynomials → PolynomialsFFTWExt\n   1554.7 ms  ✓ ImageBinarization\n  15542.0 ms  ✓ JLD2\n   1352.4 ms  ✓ MetaGraphs\n   2561.8 ms  ✓ ImageSegmentation\n   3153.8 ms  ✓ Images\n   3223.1 ms  ✓ CitableImage\n   3109.7 ms  ✓ CitablePhysicalText\n  19 dependencies successfully precompiled in 30 seconds. 245 already precompiled.\n\n\n1-element Vector{DSECollection}:\n urn:cite2:hmt:hmtdse.v1:all Homer Multitext project indexing of digital scholarly editions\n\n\n\ndsev[1] |&gt; typeof\n\nDSECollection",
+    "crumbs": [
+      "Guides",
+      "Lazy and strict reading of CEX sources"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Citable physical texts",
+    "section": "",
+    "text": "A julia package for working with digital scholarly editions associating:\n\na citable passage of text\na citable physical surface (such as a page of a manuscript, or face of an inscribed stone)\na citable documentary image illustrating the passage\n\n\n\n\n\nLearning the package\nUsing the package\n\n\n\n\nHands-on\nTry a tutorial to start using the package\nFind recipes for specific tasks\n\n\nCognition\nLearn concepts\nSee reference information (including API documentation for all exported functions)",
+    "crumbs": [
+      "Home",
+      "Citable physical texts"
+    ]
+  },
+  {
+    "objectID": "guides/index.html",
+    "href": "guides/index.html",
+    "title": "Guides",
+    "section": "",
+    "text": "Recipe book for working with CitablePhysicalText.jl",
+    "crumbs": [
+      "Guides"
+    ]
+  },
+  {
+    "objectID": "guides/customiiif.html",
+    "href": "guides/customiiif.html",
+    "title": "Custom IIIF manifests",
+    "section": "",
+    "text": "Custom IIIF manifests\n\n\n\n\n\n\nTBA\n\n\n\nComing: easily generate IIIF manifests to present illustrative selections from a dse collection.",
+    "crumbs": [
+      "Guides",
+      "Custom IIIF manifests"
+    ]
+  },
+  {
+    "objectID": "tutorials/triples.html",
+    "href": "tutorials/triples.html",
+    "title": "Texts, objects, images",
+    "section": "",
+    "text": "Texts, objects, images\nThe key type for the package is the DSETriple that associates three URN values. You can build one manually.\n\nusing CitablePhysicalText\nusing CitableBase, CitableObject, CitableText\n\npsg = CtsUrn(\"urn:cts:trmilli:tl.25.v1:1\")\nimg = Cite2Urn(\"urn:cite2:lycian:hc.v1:2007.02.0003@0.04848,0.09494,0.7129,0.07528\")\nsurf = Cite2Urn(\"urn:cite2:trmilli:inscriptions.v1:TL25\")\ntriple = DSETriple(psg, img, surf)\n\nDSETriple(urn:cts:trmilli:tl.25.v1:1, urn:cite2:lycian:hc.v1:2007.02.0003@0.04848,0.09494,0.7129,0.07528, urn:cite2:trmilli:inscriptions.v1:TL25)\n\n\nUse these functions to extract particular fields.\n\npassage(triple)\n\nurn:cts:trmilli:tl.25.v1:1\n\n\n\nimage(triple)\n\nurn:cite2:lycian:hc.v1:2007.02.0003@0.04848,0.09494,0.7129,0.07528\n\n\n\nsurface(triple)\n\nurn:cite2:trmilli:inscriptions.v1:TL25\n\n\nNote that since each component of the triple is a URN, you can test it with URN logic, as the following example illustrates.\n\ntl25 = CtsUrn(\"urn:cts:trmilli:tl.25.v1:\")\nurncontains(tl25, passage(triple))\n\ntrue",
+    "crumbs": [
+      "Tutorials",
+      "Texts, objects, images"
+    ]
+  },
+  {
+    "objectID": "tutorials/querying.html",
+    "href": "tutorials/querying.html",
+    "title": "Searching collections of triples",
+    "section": "",
+    "text": "The CitablePhysicalText package includes functions for querying a DSECollection. We’ll load a sample dataset from the file test/assets/proclusdse.cex in this github repository.\n\nusing CitableBase\nusing CitablePhysicalText\nf = joinpath(root, \"test\", \"assets\", \"proclusdse.cex\")\ndsecollectionlist = fromcex(f, DSECollection, FileReader)\n\n1-element Vector{DSECollection}:\n urn:cite2:hmt:dse.v1:vaproclus Collection of DSE records for Venetus text of Proclus, Chrestomathy\n\n\nThe result is a (possibly empty) Vector of DSECollections. This data set has a single collection, which we’ll now work with.\n\ndsecoll = dsecollectionlist[1]\n\nurn:cite2:hmt:dse.v1:vaproclus Collection of DSE records for Venetus text of Proclus, Chrestomathy\n\n\nYou can find the unique list of URNs for each field of the collection’s triples with the functions surfaces, images and texts.\n\nsurfaces(dsecoll)\n\n5-element Vector{CitableObject.Cite2Urn}:\n urn:cite2:hmt:msA.v1:1r\n urn:cite2:hmt:msA.v1:1v\n urn:cite2:hmt:msA.v1:6r\n urn:cite2:hmt:msA.v1:6v\n urn:cite2:hmt:msA.v1:4r\n\n\nThe images function has an optional parameter defining whether or not to include subreferences.\n\nimages(dsecoll, keepsubref = false)\n\n5-element Vector{CitableObject.Cite2Urn}:\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503\n urn:cite2:hmt:vaimg.2017a:VA006RN_0007\n urn:cite2:hmt:vaimg.2017a:VA006VN_0508\n urn:cite2:hmt:vaimg.2017a:VA004RN_0005\n\n\nSimilarly, the passages function has an optional parameter defining whether or not to include the passage component.\n\npassages(dsecoll, keeppassage = false)\n\n1-element Vector{CitableText.CtsUrn}:\n urn:cts:greekLit:tlg4036.tlg023.va:\n\n\n\n\n\nThe following functions find values for one field of a DSETriple filtered by another field.\nFind all text passages on a given surface:\n\nusing CitableObject\npage = Cite2Urn(\"urn:cite2:hmt:msA.v1:1r\")\ntextsforsurface(page, dsecoll)\n\n21-element Vector{CitableText.CtsUrn}:\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.title\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.1\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.2\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.3\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.4\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.5\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.6\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.7\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.8\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.9\n ⋮\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.12\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.13\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.14\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.15\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.16\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.17\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.18\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.19\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.20@ἀλλὰ-20@ταῦτα[2]\n\n\nFind all text passages indexed to a given image:\n\nimg = Cite2Urn(\"urn:cite2:hmt:vaimg.2017a:VA001RN_0002\")\ntextsforimage(img, dsecoll)\n\n21-element Vector{CitableText.CtsUrn}:\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.title\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.1\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.2\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.3\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.4\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.5\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.6\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.7\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.8\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.9\n ⋮\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.12\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.13\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.14\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.15\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.16\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.17\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.18\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.19\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.20@ἀλλὰ-20@ταῦτα[2]\n\n\nFind what pages a text occurs on:\n\nusing CitableText\nhomer = CtsUrn(\"urn:cts:greekLit:tlg4036.tlg023.va:Homer\")\nsurfacesfortext(homer, dsecoll)\n\n2-element Vector{Cite2Urn}:\n urn:cite2:hmt:msA.v1:1r\n urn:cite2:hmt:msA.v1:1v\n\n\nFind what images illustrate a text:\n\nhomer = CtsUrn(\"urn:cts:greekLit:tlg4036.tlg023.va:Homer\")\nimagesfortext(homer, dsecoll)\n\n[ Info: Txt urn:cts:greekLit:tlg4036.tlg023.va:Homer\n[ Info: Look for txturn urn:cts:greekLit:tlg4036.tlg023.va:Homer\n\n\n41-element Vector{Cite2Urn}:\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1580,0.1633,0.4740,0.05302\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1335,0.2054,0.4637,0.04139\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1553,0.2292,0.4508,0.04678\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1449,0.2620,0.4641,0.05869\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1456,0.3069,0.4667,0.06620\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.3514,0.4637,0.06904\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.4002,0.4627,0.05132\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1487,0.4278,0.4627,0.04069\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1464,0.4653,0.4724,0.05217\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1468,0.5138,0.3439,0.02155\n ⋮\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4219,0.3513,0.4438,0.04122\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.3996,0.3874,0.4818,0.02254\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4237,0.4058,0.3047,0.01867\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4237,0.4051,0.4422,0.04965\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4202,0.4328,0.4388,0.03734\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4228,0.4506,0.4405,0.03804\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4245,0.4649,0.4438,0.07344\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4219,0.5111,0.4525,0.05851\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4232,0.5426,0.4416,0.04149\n\n\nFind surfaces illustrated by an image:\n\nsurfacesforimage(img, dsecoll)\n\n1-element Vector{Cite2Urn}:\n urn:cite2:hmt:msA.v1:1r\n\n\nFind images illustrating a surface;\n\nimagesforsurface(page, dsecoll)\n\n20-element Vector{Cite2Urn}:\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1580,0.1633,0.4740,0.05302\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1335,0.2054,0.4637,0.04139\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1553,0.2292,0.4508,0.04678\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1449,0.2620,0.4641,0.05869\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1456,0.3069,0.4667,0.06620\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.3514,0.4637,0.06904\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.4002,0.4627,0.05132\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1487,0.4278,0.4627,0.04069\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1464,0.4653,0.4724,0.05217\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1468,0.5138,0.3439,0.02155\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1414,0.5149,0.4675,0.03955\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1456,0.5278,0.4605,0.03884\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1441,0.5447,0.4631,0.03672\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1437,0.5611,0.4654,0.03572\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1468,0.5801,0.4603,0.04820\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1407,0.6104,0.4757,0.05089\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.2964,0.6418,0.3163,0.01744\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1502,0.6574,0.2456,0.02056\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1382,0.6532,0.4703,0.04111\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1401,0.6741,0.4721,0.1121",
+    "crumbs": [
+      "Tutorials",
+      "Searching collections of triples"
+    ]
+  },
+  {
+    "objectID": "tutorials/querying.html#finding-unique-values-for-each-field-of-a-dsetriple",
+    "href": "tutorials/querying.html#finding-unique-values-for-each-field-of-a-dsetriple",
+    "title": "Searching collections of triples",
+    "section": "",
+    "text": "The CitablePhysicalText package includes functions for querying a DSECollection. We’ll load a sample dataset from the file test/assets/proclusdse.cex in this github repository.\n\nusing CitableBase\nusing CitablePhysicalText\nf = joinpath(root, \"test\", \"assets\", \"proclusdse.cex\")\ndsecollectionlist = fromcex(f, DSECollection, FileReader)\n\n1-element Vector{DSECollection}:\n urn:cite2:hmt:dse.v1:vaproclus Collection of DSE records for Venetus text of Proclus, Chrestomathy\n\n\nThe result is a (possibly empty) Vector of DSECollections. This data set has a single collection, which we’ll now work with.\n\ndsecoll = dsecollectionlist[1]\n\nurn:cite2:hmt:dse.v1:vaproclus Collection of DSE records for Venetus text of Proclus, Chrestomathy\n\n\nYou can find the unique list of URNs for each field of the collection’s triples with the functions surfaces, images and texts.\n\nsurfaces(dsecoll)\n\n5-element Vector{CitableObject.Cite2Urn}:\n urn:cite2:hmt:msA.v1:1r\n urn:cite2:hmt:msA.v1:1v\n urn:cite2:hmt:msA.v1:6r\n urn:cite2:hmt:msA.v1:6v\n urn:cite2:hmt:msA.v1:4r\n\n\nThe images function has an optional parameter defining whether or not to include subreferences.\n\nimages(dsecoll, keepsubref = false)\n\n5-element Vector{CitableObject.Cite2Urn}:\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503\n urn:cite2:hmt:vaimg.2017a:VA006RN_0007\n urn:cite2:hmt:vaimg.2017a:VA006VN_0508\n urn:cite2:hmt:vaimg.2017a:VA004RN_0005\n\n\nSimilarly, the passages function has an optional parameter defining whether or not to include the passage component.\n\npassages(dsecoll, keeppassage = false)\n\n1-element Vector{CitableText.CtsUrn}:\n urn:cts:greekLit:tlg4036.tlg023.va:",
+    "crumbs": [
+      "Tutorials",
+      "Searching collections of triples"
+    ]
+  },
+  {
+    "objectID": "tutorials/querying.html#querying-by-field",
+    "href": "tutorials/querying.html#querying-by-field",
+    "title": "Searching collections of triples",
+    "section": "",
+    "text": "The following functions find values for one field of a DSETriple filtered by another field.\nFind all text passages on a given surface:\n\nusing CitableObject\npage = Cite2Urn(\"urn:cite2:hmt:msA.v1:1r\")\ntextsforsurface(page, dsecoll)\n\n21-element Vector{CitableText.CtsUrn}:\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.title\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.1\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.2\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.3\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.4\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.5\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.6\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.7\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.8\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.9\n ⋮\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.12\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.13\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.14\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.15\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.16\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.17\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.18\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.19\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.20@ἀλλὰ-20@ταῦτα[2]\n\n\nFind all text passages indexed to a given image:\n\nimg = Cite2Urn(\"urn:cite2:hmt:vaimg.2017a:VA001RN_0002\")\ntextsforimage(img, dsecoll)\n\n21-element Vector{CitableText.CtsUrn}:\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.title\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.1\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.2\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.3\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.4\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.5\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.6\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.7\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.8\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.9\n ⋮\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.12\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.13\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.14\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.15\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.16\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.17\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.18\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.19\n urn:cts:greekLit:tlg4036.tlg023.va:Homer.20@ἀλλὰ-20@ταῦτα[2]\n\n\nFind what pages a text occurs on:\n\nusing CitableText\nhomer = CtsUrn(\"urn:cts:greekLit:tlg4036.tlg023.va:Homer\")\nsurfacesfortext(homer, dsecoll)\n\n2-element Vector{Cite2Urn}:\n urn:cite2:hmt:msA.v1:1r\n urn:cite2:hmt:msA.v1:1v\n\n\nFind what images illustrate a text:\n\nhomer = CtsUrn(\"urn:cts:greekLit:tlg4036.tlg023.va:Homer\")\nimagesfortext(homer, dsecoll)\n\n[ Info: Txt urn:cts:greekLit:tlg4036.tlg023.va:Homer\n[ Info: Look for txturn urn:cts:greekLit:tlg4036.tlg023.va:Homer\n\n\n41-element Vector{Cite2Urn}:\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1580,0.1633,0.4740,0.05302\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1335,0.2054,0.4637,0.04139\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1553,0.2292,0.4508,0.04678\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1449,0.2620,0.4641,0.05869\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1456,0.3069,0.4667,0.06620\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.3514,0.4637,0.06904\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.4002,0.4627,0.05132\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1487,0.4278,0.4627,0.04069\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1464,0.4653,0.4724,0.05217\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1468,0.5138,0.3439,0.02155\n ⋮\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4219,0.3513,0.4438,0.04122\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.3996,0.3874,0.4818,0.02254\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4237,0.4058,0.3047,0.01867\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4237,0.4051,0.4422,0.04965\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4202,0.4328,0.4388,0.03734\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4228,0.4506,0.4405,0.03804\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4245,0.4649,0.4438,0.07344\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4219,0.5111,0.4525,0.05851\n urn:cite2:hmt:vaimg.2017a:VA001VN_0503@0.4232,0.5426,0.4416,0.04149\n\n\nFind surfaces illustrated by an image:\n\nsurfacesforimage(img, dsecoll)\n\n1-element Vector{Cite2Urn}:\n urn:cite2:hmt:msA.v1:1r\n\n\nFind images illustrating a surface;\n\nimagesforsurface(page, dsecoll)\n\n20-element Vector{Cite2Urn}:\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1580,0.1633,0.4740,0.05302\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1335,0.2054,0.4637,0.04139\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1553,0.2292,0.4508,0.04678\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1449,0.2620,0.4641,0.05869\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1456,0.3069,0.4667,0.06620\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.3514,0.4637,0.06904\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1462,0.4002,0.4627,0.05132\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1487,0.4278,0.4627,0.04069\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1464,0.4653,0.4724,0.05217\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1468,0.5138,0.3439,0.02155\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1414,0.5149,0.4675,0.03955\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1456,0.5278,0.4605,0.03884\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1441,0.5447,0.4631,0.03672\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1437,0.5611,0.4654,0.03572\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1468,0.5801,0.4603,0.04820\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1407,0.6104,0.4757,0.05089\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.2964,0.6418,0.3163,0.01744\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1502,0.6574,0.2456,0.02056\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1382,0.6532,0.4703,0.04111\n urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1401,0.6741,0.4721,0.1121",
+    "crumbs": [
+      "Tutorials",
+      "Searching collections of triples"
+    ]
+  },
+  {
+    "objectID": "tutorials/codex.html",
+    "href": "tutorials/codex.html",
+    "title": "Manuscripts and pages",
+    "section": "",
+    "text": "Documentation in progress\n\n\n\nThis section is incomplete.\n\n\n\n\n\nThe Codex and MSPage types are specialized types of physical objects: individual pages related to a codex\neach is a citable object, so MSPage can used in a triple set\npage gives you relation to rest of codex\n\n\n\n\n\nwe’ll use an example from test/assets directory of package gh repo, and will instantiate from a CEX source using fromcex (from CitableBase q.v)\n\n\nf = joinpath(repo, \"test\", \"assets\", \"burney86-sample.cex\")\n\n\nusing CitablePhysicalText, CitableBase\nmss = fromcex(f, Codex, FileReader)\n\n1-element Vector{Codex}:\n Burney 86 manuscript\n\n\nThere’s only 1 MS in this collection.\n\nms = mss[1]\n\nBurney 86 manuscript\n\n\n\n\n\nlabel(ms)\n\n\"Burney 86 manuscript\"\n\n\n\nurn(ms)\n\nurn:cite2:citebl:burney86pages.v1:\n\n\n\n\n\nThis is a Julia iterable that iterates pages.\n\neltype(ms)\n\nMSPage\n\n\n\n\nfor pg in ms\n    @info(label(pg))\nend\n\n[ Info: British Library, Burney 86, folio 1 recto\n[ Info: British Library, Burney 86, folio 1 verso\n[ Info: British Library, Burney 86, folio 2 recto\n[ Info: British Library, Burney 86, folio 2 verso\n[ Info: British Library, Burney 86, folio 3 recto\n[ Info: British Library, Burney 86, folio 3 verso\n[ Info: British Library, Burney 86, folio 4 recto\n[ Info: British Library, Burney 86, folio 4 verso\n[ Info: British Library, Burney 86, folio 5 recto\n\n\n\ncollect(ms)[1]\n\n&lt;urn:cite2:citebl:burney86pages.v1:1r&gt; British Library, Burney 86, folio 1 recto\n\n\n\nlength(ms)\n\n9\n\n\n\n\n\n\n\npg = collect(ms)[1]\n\n&lt;urn:cite2:citebl:burney86pages.v1:1r&gt; British Library, Burney 86, folio 1 recto\n\n\n\nimage(pg)\n\nurn:cite2:citebl:burney86imgs.v1:burney_ms_86_f001r\n\n\n\nrectoverso(pg)\n\n\"recto\"",
+    "crumbs": [
+      "Tutorials",
+      "Manuscripts and pages"
+    ]
+  },
+  {
+    "objectID": "tutorials/codex.html#overview",
+    "href": "tutorials/codex.html#overview",
+    "title": "Manuscripts and pages",
+    "section": "",
+    "text": "The Codex and MSPage types are specialized types of physical objects: individual pages related to a codex\neach is a citable object, so MSPage can used in a triple set\npage gives you relation to rest of codex",
+    "crumbs": [
+      "Tutorials",
+      "Manuscripts and pages"
+    ]
+  },
+  {
+    "objectID": "tutorials/codex.html#example-codex",
+    "href": "tutorials/codex.html#example-codex",
+    "title": "Manuscripts and pages",
+    "section": "",
+    "text": "we’ll use an example from test/assets directory of package gh repo, and will instantiate from a CEX source using fromcex (from CitableBase q.v)\n\n\nf = joinpath(repo, \"test\", \"assets\", \"burney86-sample.cex\")\n\n\nusing CitablePhysicalText, CitableBase\nmss = fromcex(f, Codex, FileReader)\n\n1-element Vector{Codex}:\n Burney 86 manuscript\n\n\nThere’s only 1 MS in this collection.\n\nms = mss[1]\n\nBurney 86 manuscript\n\n\n\n\n\nlabel(ms)\n\n\"Burney 86 manuscript\"\n\n\n\nurn(ms)\n\nurn:cite2:citebl:burney86pages.v1:\n\n\n\n\n\nThis is a Julia iterable that iterates pages.\n\neltype(ms)\n\nMSPage\n\n\n\n\nfor pg in ms\n    @info(label(pg))\nend\n\n[ Info: British Library, Burney 86, folio 1 recto\n[ Info: British Library, Burney 86, folio 1 verso\n[ Info: British Library, Burney 86, folio 2 recto\n[ Info: British Library, Burney 86, folio 2 verso\n[ Info: British Library, Burney 86, folio 3 recto\n[ Info: British Library, Burney 86, folio 3 verso\n[ Info: British Library, Burney 86, folio 4 recto\n[ Info: British Library, Burney 86, folio 4 verso\n[ Info: British Library, Burney 86, folio 5 recto\n\n\n\ncollect(ms)[1]\n\n&lt;urn:cite2:citebl:burney86pages.v1:1r&gt; British Library, Burney 86, folio 1 recto\n\n\n\nlength(ms)\n\n9",
+    "crumbs": [
+      "Tutorials",
+      "Manuscripts and pages"
+    ]
+  },
+  {
+    "objectID": "tutorials/codex.html#example-page",
+    "href": "tutorials/codex.html#example-page",
+    "title": "Manuscripts and pages",
+    "section": "",
+    "text": "pg = collect(ms)[1]\n\n&lt;urn:cite2:citebl:burney86pages.v1:1r&gt; British Library, Burney 86, folio 1 recto\n\n\n\nimage(pg)\n\nurn:cite2:citebl:burney86imgs.v1:burney_ms_86_f001r\n\n\n\nrectoverso(pg)\n\n\"recto\"",
+    "crumbs": [
+      "Tutorials",
+      "Manuscripts and pages"
+    ]
+  },
+  {
+    "objectID": "reference/apis.html",
+    "href": "reference/apis.html",
+    "title": "API documentation",
+    "section": "",
+    "text": "DSETriple\n\n\n\n\n\n\n\n\nCitable relations of text passage, text-bearing surface and documentary image.\n\n\n\n\n\n\n\n\ntriple\n\n\n\n\n\n\n\n\nCompose a DSETriple from delimited-text source.\ntriple(src; delimiter)\n\n\n\n\n\n\n\n\n\ntriples\n\n\n\n\n\n\n\n\nCompose a Vector of DSETriples from delimited-text source.\ntriples(src; delimiter)\n\n\n\nCompose a Vector of DSETriples from delimited-text source.\ntriples(lines; delimiter)\n\n\n\n\n\n\n\n\n\npassage\n\n\n\n\n\n\n\n\nReturn passage field of trip.\npassage(trip)\n\n\n\n\n\n\n\n\n\nimage\n\n\n\n\n\n\n\n\nReturn image field of trip.\nimage(trip)\n\n\n\nFind image illustrating page.\nimage(pg)\n\n\n\n\n\n\n\n\n\nsurface\n\n\n\n\n\n\n\n\nReturn surface field of trip.\nsurface(trip)\n\n\n\n\n\n\n\n\n\nDSECollection\n\n\n\n\n\n\n\n\nA citable object wrapping a set of DSETriples.\n\n\n\n\n\n\n\n\nRetrieval:\nsurfaces\n\n\n\n\n\n\n\n\nFind unique values for surface field of a collection.\nsurfaces(dse)\n\n\n\n\n\n\n\n\n\npassages\n\n\n\n\n\n\n\n\nFind unique values for passage field of a collection.\npassages(dse; keeppassage)\n\n\n\n\n\n\n\n\n\nimages\n\n\n\n\n\n\n\n\nFind unique values for image field of a collection.\nimages(dse; keepsubref)\n\n\n\n\n\n\n\n\n\ntextsforsurface\n\n\n\n\n\n\n\n\nFind text passages on surface surf\ntextsforsurface(surf, dse)\n\n\n\n\n\n\n\n\n\ntextsforimage\n\n\n\n\n\n\n\n\nFind text passages for image(s) identified by URN.\ntextsforimage(img, dse; keepsubref)\n\n\n\n\n\n\n\n\n\nsurfacesfortext\n\n\n\n\n\n\n\n\nFind surfaces for text passage(s) identified by URN.\nsurfacesfortext(txt, dse; keepsubref)\n\n\n\n\n\n\n\n\n\nsurfacesforimage\n\n\n\n\n\n\n\n\nFind surfaces for image(s) identified by URN.\nsurfacesforimage(img, dse; keepsubref)\n\n\n\n\n\n\n\n\n\nimagesfortext\n\n\n\n\n\n\n\n\nFind surfaces for text passage(s) identified by URN.\nimagesfortext(txt, dse; keepsubref, keepversion)\n\n\n\n\n\n\n\n\n\nimagesforsurface\n\n\n\n\n\n\n\n\nFind surfaces for text passage(s) identified by URN.\nimagesforsurface(surf, dse; keepsubref)",
+    "crumbs": [
+      "Reference",
+      "API documentation"
+    ]
+  },
+  {
+    "objectID": "reference/apis.html#relations-of-text-object-and-image",
+    "href": "reference/apis.html#relations-of-text-object-and-image",
+    "title": "API documentation",
+    "section": "",
+    "text": "DSETriple\n\n\n\n\n\n\n\n\nCitable relations of text passage, text-bearing surface and documentary image.\n\n\n\n\n\n\n\n\ntriple\n\n\n\n\n\n\n\n\nCompose a DSETriple from delimited-text source.\ntriple(src; delimiter)\n\n\n\n\n\n\n\n\n\ntriples\n\n\n\n\n\n\n\n\nCompose a Vector of DSETriples from delimited-text source.\ntriples(src; delimiter)\n\n\n\nCompose a Vector of DSETriples from delimited-text source.\ntriples(lines; delimiter)\n\n\n\n\n\n\n\n\n\npassage\n\n\n\n\n\n\n\n\nReturn passage field of trip.\npassage(trip)\n\n\n\n\n\n\n\n\n\nimage\n\n\n\n\n\n\n\n\nReturn image field of trip.\nimage(trip)\n\n\n\nFind image illustrating page.\nimage(pg)\n\n\n\n\n\n\n\n\n\nsurface\n\n\n\n\n\n\n\n\nReturn surface field of trip.\nsurface(trip)\n\n\n\n\n\n\n\n\n\nDSECollection\n\n\n\n\n\n\n\n\nA citable object wrapping a set of DSETriples.\n\n\n\n\n\n\n\n\nRetrieval:\nsurfaces\n\n\n\n\n\n\n\n\nFind unique values for surface field of a collection.\nsurfaces(dse)\n\n\n\n\n\n\n\n\n\npassages\n\n\n\n\n\n\n\n\nFind unique values for passage field of a collection.\npassages(dse; keeppassage)\n\n\n\n\n\n\n\n\n\nimages\n\n\n\n\n\n\n\n\nFind unique values for image field of a collection.\nimages(dse; keepsubref)\n\n\n\n\n\n\n\n\n\ntextsforsurface\n\n\n\n\n\n\n\n\nFind text passages on surface surf\ntextsforsurface(surf, dse)\n\n\n\n\n\n\n\n\n\ntextsforimage\n\n\n\n\n\n\n\n\nFind text passages for image(s) identified by URN.\ntextsforimage(img, dse; keepsubref)\n\n\n\n\n\n\n\n\n\nsurfacesfortext\n\n\n\n\n\n\n\n\nFind surfaces for text passage(s) identified by URN.\nsurfacesfortext(txt, dse; keepsubref)\n\n\n\n\n\n\n\n\n\nsurfacesforimage\n\n\n\n\n\n\n\n\nFind surfaces for image(s) identified by URN.\nsurfacesforimage(img, dse; keepsubref)\n\n\n\n\n\n\n\n\n\nimagesfortext\n\n\n\n\n\n\n\n\nFind surfaces for text passage(s) identified by URN.\nimagesfortext(txt, dse; keepsubref, keepversion)\n\n\n\n\n\n\n\n\n\nimagesforsurface\n\n\n\n\n\n\n\n\nFind surfaces for text passage(s) identified by URN.\nimagesforsurface(surf, dse; keepsubref)",
+    "crumbs": [
+      "Reference",
+      "API documentation"
+    ]
+  },
+  {
+    "objectID": "reference/apis.html#model-of-manuscript-and-pages",
+    "href": "reference/apis.html#model-of-manuscript-and-pages",
+    "title": "API documentation",
+    "section": "Model of manuscript and pages",
+    "text": "Model of manuscript and pages\nCodex\n\n\n\n\n\n\n\n\nA codex is a collection of manuscript pages.\n\n\n\n\n\n\n\n\ncodex\n\n\n\n\n\n\n\n\nConvenience function for creating Codex objects.\ncodex(pages; description)\n\n\n\n\n\n\n\n\n\nMSPage\n\n\n\n\n\n\n\n\nA single page (one side of a folio) of a codex\n\n\n\n\n\n\n\n\nrectoverso\n\n\n\n\n\n\n\n\nFind recto or verso value for page.\nrectoverso(pg)\n\n\n\n\n\n\n\n\n\nimage\n\n\n\n\n\n\n\n\nReturn image field of trip.\nimage(trip)\n\n\n\nFind image illustrating page.\nimage(pg)\n\n\n\n\n\n\n\n\n\nsequence\n\n\n\n\n\n\n\n\nFind sequence of page within a codex.\nsequence(pg)",
+    "crumbs": [
+      "Reference",
+      "API documentation"
+    ]
+  }
+]

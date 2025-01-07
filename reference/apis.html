@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-01-06">
 
-<title>Citable physical texts – CitablePhysicalText</title>
+<title>API documentation – CitablePhysicalText</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,22 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8fdb60cc607797eed9f9084820682789.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8fdb60cc607797eed9f9084820682789.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,6 +67,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -78,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CitablePhysicalText</span>
     </a>
   </div>
@@ -89,23 +92,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./concepts/index.html"> 
+    <a class="nav-link" href="../concepts/index.html"> 
 <span class="menu-text">Concepts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials/index.html"> 
+    <a class="nav-link" href="../tutorials/index.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./guides/index.html"> 
+    <a class="nav-link" href="../guides/index.html"> 
 <span class="menu-text">Guides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reference/index.html"> 
+    <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
 <span class="menu-text">Reference</span></a>
   </li>  
 </ul>
@@ -143,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Citable physical texts</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/apis.html">API documentation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -157,8 +160,14 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Citable physical texts</span></a>
+  <a href="../reference/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/apis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">API documentation</span></a>
   </div>
 </li>
     </ul>
@@ -169,14 +178,21 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>Package version: <code>0.12.0</code></p>
 </div></div>
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#relations-of-text-object-and-image" id="toc-relations-of-text-object-and-image" class="nav-link active" data-scroll-target="#relations-of-text-object-and-image">Relations of text, object and image</a></li>
+  <li><a href="#model-of-manuscript-and-pages" id="toc-model-of-manuscript-and-pages" class="nav-link" data-scroll-target="#model-of-manuscript-and-pages">Model of manuscript and pages</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Citable physical texts</h1>
+<h1 class="title">API documentation</h1>
 </div>
 
 
@@ -199,35 +215,462 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A julia package for working with digital scholarly editions associating:</p>
-<ul>
-<li>a citable passage of text</li>
-<li>a citable physical surface (such as a page of a manuscript, or face of an inscribed stone)</li>
-<li>a citable documentary image illustrating the passage</li>
-</ul>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Learning the package</th>
-<th>Using the package</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Hands-on</strong></td>
-<td>Try a <a href="./tutorials/">tutorial</a> to start using the package</td>
-<td>Find <a href="./guides/">recipes</a> for specific tasks</td>
-</tr>
-<tr class="even">
-<td><strong>Cognition</strong></td>
-<td>Learn <a href="./concepts/">concepts</a></td>
-<td>See <a href="./reference/">reference information</a> (including API documentation for all exported functions)</td>
-</tr>
-</tbody>
-</table>
+<section id="relations-of-text-object-and-image" class="level2">
+<h2 class="anchored" data-anchor-id="relations-of-text-object-and-image">Relations of text, object and image</h2>
+<p><code>DSETriple</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="2" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Citable relations of text passage, text-bearing surface and documentary image.</p>
 
 
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>triple</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="4" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Compose a <code>DSETriple</code> from delimited-text source.</p>
+<pre><code class="language-julia">triple(src; delimiter)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>triples</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="6" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Compose a Vector of <code>DSETriple</code>s from delimited-text source.</p>
+<pre><code class="language-julia">triples(src; delimiter)
+</code></pre>
+
+
+<p>Compose a Vector of <code>DSETriple</code>s from delimited-text source.</p>
+<pre><code class="language-julia">triples(lines; delimiter)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>passage</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="8" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Return <code>passage</code> field of <code>trip</code>.</p>
+<pre><code class="language-julia">passage(trip)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>image</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="10" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Return <code>image</code> field of <code>trip</code>.</p>
+<pre><code class="language-julia">image(trip)
+</code></pre>
+
+
+<p>Find image illustrating page.</p>
+<pre><code class="language-julia">image(pg)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>surface</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="12" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Return <code>surface</code> field of <code>trip</code>.</p>
+<pre><code class="language-julia">surface(trip)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>DSECollection</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="14" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>A citable object wrapping a set of <code>DSETriple</code>s.</p>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Retrieval:</p>
+<p><code>surfaces</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="16" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find unique values for surface field of a collection.</p>
+<pre><code class="language-julia">surfaces(dse)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>passages</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="18" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find unique values for passage field of a collection.</p>
+<pre><code class="language-julia">passages(dse; keeppassage)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>images</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="20" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find unique values for image field of a collection.</p>
+<pre><code class="language-julia">images(dse; keepsubref)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>textsforsurface</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="22" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find text passages on surface <code>surf</code></p>
+<pre><code class="language-julia">textsforsurface(surf, dse)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>textsforimage</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="24" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find text passages for image(s) identified by URN.</p>
+<pre><code class="language-julia">textsforimage(img, dse; keepsubref)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>surfacesfortext</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="26" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find surfaces for text passage(s) identified by URN.</p>
+<pre><code class="language-julia">surfacesfortext(txt, dse; keepsubref)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>surfacesforimage</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="28" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find surfaces for image(s) identified by URN.</p>
+<pre><code class="language-julia">surfacesforimage(img, dse; keepsubref)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>imagesfortext</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="30" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find surfaces for text passage(s) identified by URN.</p>
+<pre><code class="language-julia">imagesfortext(txt, dse; keepsubref, keepversion)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>imagesforsurface</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="32" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find surfaces for text passage(s) identified by URN.</p>
+<pre><code class="language-julia">imagesforsurface(surf, dse; keepsubref)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="model-of-manuscript-and-pages" class="level2">
+<h2 class="anchored" data-anchor-id="model-of-manuscript-and-pages">Model of manuscript and pages</h2>
+<p><code>Codex</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="34" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>A codex is a collection of manuscript pages.</p>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>codex</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="36" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Convenience function for creating <code>Codex</code> objects.</p>
+<pre><code class="language-julia">codex(pages; description)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>MSPage</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="38" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>A single page (one side of a folio) of a codex</p>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>rectoverso</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="40" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find recto or verso value for page.</p>
+<pre><code class="language-julia">rectoverso(pg)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>image</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="42" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Return <code>image</code> field of <code>trip</code>.</p>
+<pre><code class="language-julia">image(trip)
+</code></pre>
+
+
+<p>Find image illustrating page.</p>
+<pre><code class="language-julia">image(pg)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>sequence</code></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="44" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Find sequence of page within a codex.</p>
+<pre><code class="language-julia">sequence(pg)
+</code></pre>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

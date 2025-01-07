@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-01-06">
 
-<title>Citable physical texts – CitablePhysicalText</title>
+<title>lazy – CitablePhysicalText</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,25 +21,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8fdb60cc607797eed9f9084820682789.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8fdb60cc607797eed9f9084820682789.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CitablePhysicalText</span>
     </a>
   </div>
@@ -89,23 +123,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./concepts/index.html"> 
+    <a class="nav-link" href="../concepts/index.html"> 
 <span class="menu-text">Concepts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials/index.html"> 
+    <a class="nav-link" href="../tutorials/index.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./guides/index.html"> 
+    <a class="nav-link active" href="../guides/index.html" aria-current="page"> 
 <span class="menu-text">Guides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reference/index.html"> 
+    <a class="nav-link" href="../reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
 </ul>
@@ -143,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Citable physical texts</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guides/lazy.html">Lazy and strict reading of CEX sources</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -157,8 +191,20 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Citable physical texts</span></a>
+  <a href="../guides/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guides</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/lazy.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lazy and strict reading of CEX sources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/customiiif.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Custom IIIF manifests</span></a>
   </div>
 </li>
     </ul>
@@ -169,14 +215,19 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>Package version: <code>0.12.0</code></p>
 </div></div>
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lazy-and-strict-reading-of-cex-sources" id="toc-lazy-and-strict-reading-of-cex-sources" class="nav-link active" data-scroll-target="#lazy-and-strict-reading-of-cex-sources">Lazy and strict reading of CEX sources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Citable physical texts</h1>
 </div>
 
 
@@ -199,35 +250,58 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A julia package for working with digital scholarly editions associating:</p>
+<section id="lazy-and-strict-reading-of-cex-sources" class="level1">
+<h1>Lazy and strict reading of CEX sources</h1>
+<p>You can instantiate a <code>DSECollection</code> from a delimited-text data source using the <code>fromcex</code> method.</p>
 <ul>
-<li>a citable passage of text</li>
-<li>a citable physical surface (such as a page of a manuscript, or face of an inscribed stone)</li>
-<li>a citable documentary image illustrating the passage</li>
+<li>lazy: a single cite relations block</li>
+<li>strict: full metadata for one or more sources</li>
 </ul>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Learning the package</th>
-<th>Using the package</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Hands-on</strong></td>
-<td>Try a <a href="./tutorials/">tutorial</a> to start using the package</td>
-<td>Find <a href="./guides/">recipes</a> for specific tasks</td>
-</tr>
-<tr class="even">
-<td><strong>Cognition</strong></td>
-<td>Learn <a href="./concepts/">concepts</a></td>
-<td>See <a href="./reference/">reference information</a> (including API documentation for all exported functions)</td>
-</tr>
-</tbody>
-</table>
+<p>We’ll read a single, large DSE collection from a file</p>
+<div id="4" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>src <span class="op">=</span> <span class="fu">joinpath</span>(root, <span class="st">"test"</span>,<span class="st">"assets"</span>, <span class="st">"hmt-2022k.cex"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CitablePhysicalText</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CitableBase</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dsev <span class="op">=</span> <span class="fu">fromcex</span>(src,DSECollection,FileReader)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#lazydsev = fromcex(src,DSECollection,FileReader; strict = false)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Precompiling CitablePhysicalText...
+    908.5 ms  ✓ Clustering
+   1062.3 ms  ✓ MacroTools
+    551.3 ms  ✓ SimpleTraits
+    736.2 ms  ✓ Setfield
+   1320.4 ms  ✓ ImageAxes
+    971.5 ms  ✓ ImageMetadata
+   2378.8 ms  ✓ Graphs
+    872.1 ms  ✓ SimpleWeightedGraphs
+   1344.3 ms  ✓ Netpbm
+   9958.3 ms  ✓ Polynomials
+   1029.7 ms  ✓ Polynomials → PolynomialsChainRulesCoreExt
+   1008.0 ms  ✓ Polynomials → PolynomialsFFTWExt
+   1554.7 ms  ✓ ImageBinarization
+  15542.0 ms  ✓ JLD2
+   1352.4 ms  ✓ MetaGraphs
+   2561.8 ms  ✓ ImageSegmentation
+   3153.8 ms  ✓ Images
+   3223.1 ms  ✓ CitableImage
+   3109.7 ms  ✓ CitablePhysicalText
+  19 dependencies successfully precompiled in 30 seconds. 245 already precompiled.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>1-element Vector{DSECollection}:
+ urn:cite2:hmt:hmtdse.v1:all Homer Multitext project indexing of digital scholarly editions</code></pre>
+</div>
+</div>
+<div id="6" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dsev[<span class="fl">1</span>] <span class="op">|&gt;</span> typeof</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>DSECollection</code></pre>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

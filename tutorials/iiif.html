@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-06">
+<meta name="dcterms.date" content="2025-01-07">
 
-<title>Citable physical texts – CitablePhysicalText</title>
+<title>iiif – CitablePhysicalText</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,25 +21,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8fdb60cc607797eed9f9084820682789.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8fdb60cc607797eed9f9084820682789.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,14 +105,14 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CitablePhysicalText</span>
     </a>
   </div>
@@ -89,23 +123,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./concepts/index.html"> 
+    <a class="nav-link" href="../concepts/index.html"> 
 <span class="menu-text">Concepts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials/index.html"> 
+    <a class="nav-link" href="../tutorials/index.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./guides/index.html"> 
+    <a class="nav-link" href="../guides/index.html"> 
 <span class="menu-text">Guides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reference/index.html"> 
+    <a class="nav-link" href="../reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
 </ul>
@@ -138,45 +172,37 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Citable physical texts</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Citable physical texts</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>Package version: <code>0.12.0</code></p>
 </div></div>
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#generating-iiif-manifests-for-a-codex" id="toc-generating-iiif-manifests-for-a-codex" class="nav-link active" data-scroll-target="#generating-iiif-manifests-for-a-codex">Generating IIIF manifests for a codex</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a>
+  <ul class="collapse">
+  <li><a href="#the-codex-data" id="toc-the-codex-data" class="nav-link" data-scroll-target="#the-codex-data">The codex data</a></li>
+  <li><a href="#the-iiif-image-service" id="toc-the-iiif-image-service" class="nav-link" data-scroll-target="#the-iiif-image-service">The IIIF image service</a></li>
+  <li><a href="#configuring-the-manifest" id="toc-configuring-the-manifest" class="nav-link" data-scroll-target="#configuring-the-manifest">Configuring the manifest</a></li>
+  <li><a href="#generating-the-manifest" id="toc-generating-the-manifest" class="nav-link" data-scroll-target="#generating-the-manifest">Generating the manifest</a></li>
+  <li><a href="#publishing-and-using-the-manifest" id="toc-publishing-and-using-the-manifest" class="nav-link" data-scroll-target="#publishing-and-using-the-manifest">Publishing and using the manifest</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Citable physical texts</h1>
 </div>
 
 
@@ -187,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2025</p>
+      <p class="date">January 7, 2025</p>
     </div>
   </div>
   
@@ -199,35 +225,105 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A julia package for working with digital scholarly editions associating:</p>
+<section id="generating-iiif-manifests-for-a-codex" class="level1">
+<h1>Generating IIIF manifests for a codex</h1>
+<p>When you model a codex, you document each page with an image. If the images are available from a server supporting the image serving protocol of the <a href="https://iiif.io">IIIF</a> (International Image Interoperability Framework), you can easily share a catalog of the images as a IIIF Presentation Manifest presenting the sequence of the manuscript’s pages in order. In this tutorial, we’ll see how to use the <code>iiifmanifest</code> function to create a IIIF manifest for a codex, then serve the manifest from a platform like github to use it from anyone’s IIIF application.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="To learn more">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+To learn more
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>a citable passage of text</li>
-<li>a citable physical surface (such as a page of a manuscript, or face of an inscribed stone)</li>
-<li>a citable documentary image illustrating the passage</li>
+<li>See <a href="https://neelsmith.quarto.pub/citablephysicaltext/tutorials/codex.html">this tutorial</a> to get started with codices (books) and pages.</li>
+<li>Seen an introduction to <a href="https://iiif.io/get-started/how-iiif-works/">how the IIIF protocols work</a></li>
 </ul>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Learning the package</th>
-<th>Using the package</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Hands-on</strong></td>
-<td>Try a <a href="./tutorials/">tutorial</a> to start using the package</td>
-<td>Find <a href="./guides/">recipes</a> for specific tasks</td>
-</tr>
-<tr class="even">
-<td><strong>Cognition</strong></td>
-<td>Learn <a href="./concepts/">concepts</a></td>
-<td>See <a href="./reference/">reference information</a> (including API documentation for all exported functions)</td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>We need:</p>
+<ol type="1">
+<li>the data from the codex model</li>
+<li>the IIIF image service where the images are available</li>
+<li>information for configuring the Manifest.</li>
+</ol>
+<section id="the-codex-data" class="level3">
+<h3 class="anchored" data-anchor-id="the-codex-data">The codex data</h3>
+<p>We’ll read the sample model of a codex from a file in this project’s github repository. See <a href="https://neelsmith.quarto.pub/citablephysicaltext/tutorials/codex.html">this tutorial</a> for more details.</p>
+<div id="4" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CitablePhysicalText</span>, <span class="bu">CitableBase</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="fu">joinpath</span>(repo, <span class="st">"test"</span>, <span class="st">"assets"</span>, <span class="st">"burney86-sample.cex"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ms <span class="op">=</span> <span class="fu">fromcex</span>(f, Codex, FileReader)[<span class="fl">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-iiif-image-service" class="level3">
+<h3 class="anchored" data-anchor-id="the-iiif-image-service">The IIIF image service</h3>
+<p>We’ll use the <code>IIIFservice</code> type from the <code>CitableImage</code> package: see the <a href="https://neelsmith.quarto.pub/citableimage/">package documentation</a> for more details.</p>
+<div id="6" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CitableImage</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>imgsvc_baseurl <span class="op">=</span> <span class="st">"http://www.homermultitext.org/iipsrv"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>imgsvc_root <span class="op">=</span> <span class="st">"/project/homer/pyramidal/deepzoom"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>imgsvc <span class="op">=</span> <span class="fu">IIIFservice</span>(imgsvc_baseurl, imgsvc_root)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>IIIFservice("http://www.homermultitext.org/iipsrv", "/project/homer/pyramidal/deepzoom")</code></pre>
+</div>
+</div>
+</section>
+<section id="configuring-the-manifest" class="level3">
+<h3 class="anchored" data-anchor-id="configuring-the-manifest">Configuring the manifest</h3>
+<p>Every manifest must have a unique</p>
+<div id="8" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>manifesturl <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>conf <span class="op">=</span> <span class="fu">iiifconfig</span>(manifesturl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>Configuration for IIIF manifest with ID https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Manually conifguring IDs">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Manually conifguring IDs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can use the <code>IIIFConfig</code> object to manually configure many values in the IIIF Presentation Manifest. The manifest identifies a series of Canvas objects, each containing an AnnotationPage, which in turn contains an Annotation to paint the containing Canvas. You can configure collection names for each of these types of objects. See details in the API documentation.</p>
+</div>
+</div>
+</section>
+<section id="generating-the-manifest" class="level3">
+<h3 class="anchored" data-anchor-id="generating-the-manifest">Generating the manifest</h3>
+<p>With these parameters defined, we can get the JSON text of a manifest for our codex:</p>
+<div id="10" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>manifestjson <span class="op">=</span> <span class="fu">iiifmanifest</span>(ms, conf, imgsvc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="publishing-and-using-the-manifest" class="level3">
+<h3 class="anchored" data-anchor-id="publishing-and-using-the-manifest">Publishing and using the manifest</h3>
+<p>Now all we need to do is serve the text on the internet, preferably with support for COR. Github can do this for us: we’ll write the output to the same directory where we kept our source data for the codex.</p>
+<div id="12" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>outfile <span class="op">=</span> <span class="fu">joinpath</span>(repo, <span class="st">"test"</span>, <span class="st">"assets"</span>, <span class="st">"burney86samplemanifest.json"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">open</span>(outfile,<span class="st">"w"</span>) <span class="cf">do</span> io</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write</span>(io, manifestjson)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We’ve pushed this to our repository so that it is available at this URL:</p>
+<p><code>https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/main/test/assets/burney86samplemanifest.json</code></p>
+<p>Use that with any IIIF viewer (like <a href="https://iiif.io/get-started/iiif-viewers/">these</a>).</p>
+<p>Here’s our manifest displayed in the Tify viewer:</p>
+<p><img src="./imgs/iiif-tify.png" class="img-fluid"></p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
