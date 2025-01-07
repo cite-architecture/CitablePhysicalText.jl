@@ -1,7 +1,7 @@
 """Information needed to compose a IIIF Presentation Manifest.
 """
 struct IIIFConfig
-    manifest_id
+    manifest_id;
     canvas_id_base
     page_id_base
     annotation_id_base
@@ -9,6 +9,23 @@ struct IIIFConfig
     labels_lang
 end
 
+"""Override `Base.show` for `IIIFConfig`.
+$(SIGNATURES)
+"""
+function show(io::IO, conf::IIIFConfig)
+    write(io, string("Configuration for IIIF manifest with ID $(conf.manifest_id)"))
+end
+
+
+function iiifconfig(manifest_id; 
+    canvas_id_base = "canvases/", 
+    page_id_base = "pages/", 
+    annotation_id_base = "annotations/",
+    image_extension = "tif", 
+    labels_lang = "en")
+
+    IIIFConfig(manifest_id, canvas_id_base, page_id_base,  annotation_id_base, image_extension,labels_lang)
+end
 
 """Derive an IIIF identifier from an image URN and an IIIF service.
 $(SIGNATURES)
@@ -98,7 +115,6 @@ $(SIGNATURES)
 function iiifmanifest(c::Codex, conf::IIIFConfig, svc::IIIFservice)
     lbl = label(c)
 
-
     jsonlines = [
     "{" ,
     "\"@context\": \"http://iiif.io/api/presentation/3/context.json\",",
@@ -127,6 +143,14 @@ function iiifmanifest(c::Codex, conf::IIIFConfig, svc::IIIFservice)
     # Close structure:
     push!(jsonlines, "}")
     # Return a string:
-    join(jsonlines," ")
+    finaljson = join(jsonlines," ")
+    try 
+        parses = JSON.parse(finaljson)
+        # OK!
+        finaljson
+    catch e
+        @error("Failed to create valid JSON manifest.")
+        nothing
+    end
 end
 

@@ -53,7 +53,7 @@ export imagesfortext, imagesforsurface
 export MSPage, sequence, image, rectoverso
 export Codex, codex
 
-export IIIFConfig, iiifmanifest
+export IIIFConfig, iiifmanifest, iiifconfig
 
 
 "Abstract type for physical objects with text"

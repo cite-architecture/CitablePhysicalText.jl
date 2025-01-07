@@ -1,0 +1,9 @@
+---
+engine: julia
+---
+
+# Custom IIIF manifests
+
+::: {.callout-caution title="TBA"}
+Coming: easily generate IIIF manifests to present illustrative selections from a dse collection.
+:::

@@ -49,11 +49,13 @@ website:
         - tutorials/querying.qmd
         - text: "---"
         - tutorials/codex.qmd
+        - tutorials/index.qmd
 
     - title: "Guides"
       contents:
         - guides/index.qmd
         - guides/lazy.qmd
+        - guides/customiiif.qmd
 
 
     - title: "Reference"

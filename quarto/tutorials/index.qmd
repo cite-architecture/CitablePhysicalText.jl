@@ -29,6 +29,8 @@ Try one of these tutorials to start learning `CitablePhysicalText.jl`.
 
 [Codices and pages](./codex.qmd)
 
+[Generate IIIF Manifests for a codex](./iiif.qmd)
+
 :::
 
 ::::
