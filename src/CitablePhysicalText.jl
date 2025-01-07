@@ -1,6 +1,7 @@
 module CitablePhysicalText
 
 using Documenter, DocStringExtensions
+using Downloads
 
 using SplitApplyCombine
 
@@ -35,6 +36,9 @@ using CitableText, CitableObject
 using CitableObject.CexUtils
 using CiteEXchange
 
+using CitableImage
+
+using JSON
 
 export DSETriple
 export triple, triples 
@@ -49,6 +53,8 @@ export imagesfortext, imagesforsurface
 export MSPage, sequence, image, rectoverso
 export Codex, codex
 
+export IIIFConfig, iiifmanifest, iiifconfig
+
 
 "Abstract type for physical objects with text"
 abstract type TextBearingSurface end
@@ -60,5 +66,7 @@ include("dsecollection.jl")
 include("retrieval.jl")
 include("mspage.jl")
 include("codex.jl")
+include("iiif.jl")
+
 
 end # module

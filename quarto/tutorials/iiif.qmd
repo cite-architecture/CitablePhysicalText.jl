@@ -1,0 +1,104 @@
+---
+engine: julia
+---
+
+# Generating IIIF manifests for a codex
+
+
+
+
+
+```{julia}
+#| output: false
+#| echo: false
+repo = pwd() |> dirname |> dirname
+#using Pkg
+#Pkg.add("CitableBase")
+#Pkg.add("CitableImage")
+```
+
+
+When you model a codex, you document each page with an image. If the images are available from a server supporting the image serving protocol of the [IIIF](https://iiif.io) (International Image Interoperability Framework), you can easily share a catalog of the images as a IIIF Presentation Manifest presenting the sequence of the manuscript's pages in order. In this tutorial, we'll see how to use the `iiifmanifest` function to create a IIIF manifest for a codex, then serve the manifest from a platform like github to use it from anyone's IIIF application.
+
+
+
+
+::: {.callout-tip title="To learn more"}
+- See [this tutorial](https://neelsmith.quarto.pub/citablephysicaltext/tutorials/codex.html) to get started with codices (books) and pages.
+- Seen an introduction to [how the IIIF protocols work](https://iiif.io/get-started/how-iiif-works/)
+:::
+
+
+## Prerequisites
+
+We need:
+
+1. the data from the codex model
+1. the IIIF image service where the images are available
+1. information for configuring the Manifest.
+
+### The codex data
+
+We'll read the sample model of a codex from a file in this project's github repository. See [this tutorial](https://neelsmith.quarto.pub/citablephysicaltext/tutorials/codex.html) for more details.
+
+
+```{julia}
+#| output: false
+using CitablePhysicalText, CitableBase
+f = joinpath(repo, "test", "assets", "burney86-sample.cex")
+ms = fromcex(f, Codex, FileReader)[1]
+```
+
+
+### The IIIF image service
+
+We'll use the `IIIFservice` type from the `CitableImage` package: see the [package documentation](https://neelsmith.quarto.pub/citableimage/) for more details.
+
+```{julia}
+using CitableImage
+imgsvc_baseurl = "http://www.homermultitext.org/iipsrv"
+imgsvc_root = "/project/homer/pyramidal/deepzoom"
+imgsvc = IIIFservice(imgsvc_baseurl, imgsvc_root)
+```
+
+### Configuring the manifest
+
+Every manifest must have a unique
+
+
+```{julia}
+manifesturl = "https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/dev/test/assets/burney86samplemanifest.json"
+conf = iiifconfig(manifesturl)
+```
+
+::: {.callout-tip title="Manually conifguring IDs"}
+You can use the `IIIFConfig` object to manually configure many values in the IIIF Presentation Manifest. The manifest identifies  a series of Canvas objects, each containing an AnnotationPage, which in turn contains an Annotation to paint the containing Canvas. You can configure collection names for each of these types of objects. See details in the API documentation.
+:::
+
+### Generating the manifest
+
+With these parameters defined, we can get the JSON text of a manifest for our codex:
+
+```{julia}
+#| output: false
+manifestjson = iiifmanifest(ms, conf, imgsvc)
+```
+
+### Publishing and using the manifest
+
+Now all we need to do is serve the text on the internet, preferably with support for COR.  Github can do this for us: we'll write the output to the same directory where we kept our source data for the codex.
+
+```{julia}
+#| output: false
+outfile = joinpath(repo, "test", "assets", "burney86samplemanifest.json")
+open(outfile,"w") do io
+    write(io, manifestjson)
+end
+```
+
+
+We've pushed this to our repository so that it is available at this URL:
+
+`https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/dev/test/assets/burney86samplemanifest.json`
+
+Use that with any IIIF viewer (like [these](https://iiif.io/get-started/iiif-viewers/)).

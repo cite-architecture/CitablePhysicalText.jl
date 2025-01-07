@@ -5,7 +5,7 @@ theme: spacelab
 execute:
   freeze: auto
 date: last-modified  
-margin-header: "Package version: `0.11.0`"
+margin-header: "Package version: `0.12.0`"
 format:
   html: 
     toc: true
@@ -29,7 +29,7 @@ website:
         file: reference/index.qmd  
     right:   
       - icon: github
-        href: https://github.com/hcmid/Orthography.jl
+        href: https://github.com/cite-architecture/CitablePhysicalText.jl
         aria-label: GitHub
       - icon: person-circle
         menu:
@@ -49,11 +49,13 @@ website:
         - tutorials/querying.qmd
         - text: "---"
         - tutorials/codex.qmd
+        - tutorials/index.qmd
 
     - title: "Guides"
       contents:
         - guides/index.qmd
         - guides/lazy.qmd
+        - guides/customiiif.qmd
 
 
     - title: "Reference"

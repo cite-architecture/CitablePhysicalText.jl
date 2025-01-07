@@ -1,3 +1,7 @@
+---
+engine: julia
+---
+
 # Collections of triple sets
 
 The `DSECollection` contains a human-readable label, and list of `DSETriple`s, and is identified by `Cite2Urn`.  You can construct one manually, as in this example.

@@ -1,0 +1,361 @@
+{ "@context": "http://iiif.io/api/presentation/3/context.json", "id": "https://raw.githubusercontent.com/cite-architecture/CitablePhysicalText.jl/refs/heads/dev/test/assets/burney86samplemanifest.json", "type": "Manifest", "label": { "en": [ "Burney 86 manuscript" ] }, "items": [ {
+    "id": "canvases/1r",
+    "type": "Canvas",
+    "label": {
+        "en": [
+            "British Library, Burney 86, folio 1 recto"
+        ]
+    },
+    "height": 6266,
+    "width": 4750,
+ 
+    "items": [
+        {
+            "id": "annotations/1r",
+            "type": "AnnotationPage",
+            "items": [
+                {
+                "id": "annotations/1r",
+                "type": "Annotation",
+                "motivation": "painting",
+                "body": {
+                    "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f001r.tif/full/2000,/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "height": 6266,
+                    "width": 4750
+                },
+                "target": "canvases/1r",
+                "service": [
+                    {
+                        "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f001r.tif",
+                        "profile": "level1",
+                        "type": "ImageService2"
+                    }
+                ]
+                }
+            ]
+        }
+        ]
+    }
+, {
+    "id": "canvases/1v",
+    "type": "Canvas",
+    "label": {
+        "en": [
+            "British Library, Burney 86, folio 1 verso"
+        ]
+    },
+    "height": 5905,
+    "width": 4596,
+ 
+    "items": [
+        {
+            "id": "annotations/1v",
+            "type": "AnnotationPage",
+            "items": [
+                {
+                "id": "annotations/1v",
+                "type": "Annotation",
+                "motivation": "painting",
+                "body": {
+                    "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f001v.tif/full/2000,/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "height": 5905,
+                    "width": 4596
+                },
+                "target": "canvases/1v",
+                "service": [
+                    {
+                        "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f001v.tif",
+                        "profile": "level1",
+                        "type": "ImageService2"
+                    }
+                ]
+                }
+            ]
+        }
+        ]
+    }
+, {
+    "id": "canvases/2r",
+    "type": "Canvas",
+    "label": {
+        "en": [
+            "British Library, Burney 86, folio 2 recto"
+        ]
+    },
+    "height": 6266,
+    "width": 4750,
+ 
+    "items": [
+        {
+            "id": "annotations/2r",
+            "type": "AnnotationPage",
+            "items": [
+                {
+                "id": "annotations/2r",
+                "type": "Annotation",
+                "motivation": "painting",
+                "body": {
+                    "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f002r.tif/full/2000,/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "height": 6266,
+                    "width": 4750
+                },
+                "target": "canvases/2r",
+                "service": [
+                    {
+                        "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f002r.tif",
+                        "profile": "level1",
+                        "type": "ImageService2"
+                    }
+                ]
+                }
+            ]
+        }
+        ]
+    }
+, {
+    "id": "canvases/2v",
+    "type": "Canvas",
+    "label": {
+        "en": [
+            "British Library, Burney 86, folio 2 verso"
+        ]
+    },
+    "height": 5905,
+    "width": 4557,
+ 
+    "items": [
+        {
+            "id": "annotations/2v",
+            "type": "AnnotationPage",
+            "items": [
+                {
+                "id": "annotations/2v",
+                "type": "Annotation",
+                "motivation": "painting",
+                "body": {
+                    "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f002v.tif/full/2000,/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "height": 5905,
+                    "width": 4557
+                },
+                "target": "canvases/2v",
+                "service": [
+                    {
+                        "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f002v.tif",
+                        "profile": "level1",
+                        "type": "ImageService2"
+                    }
+                ]
+                }
+            ]
+        }
+        ]
+    }
+, {
+    "id": "canvases/3r",
+    "type": "Canvas",
+    "label": {
+        "en": [
+            "British Library, Burney 86, folio 3 recto"
+        ]
+    },
+    "height": 6266,
+    "width": 4766,
+ 
+    "items": [
+        {
+            "id": "annotations/3r",
+            "type": "AnnotationPage",
+            "items": [
+                {
+                "id": "annotations/3r",
+                "type": "Annotation",
+                "motivation": "painting",
+                "body": {
+                    "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f003r.tif/full/2000,/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "height": 6266,
+                    "width": 4766
+                },
+                "target": "canvases/3r",
+                "service": [
+                    {
+                        "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f003r.tif",
+                        "profile": "level1",
+                        "type": "ImageService2"
+                    }
+                ]
+                }
+            ]
+        }
+        ]
+    }
+, {
+    "id": "canvases/3v",
+    "type": "Canvas",
+    "label": {
+        "en": [
+            "British Library, Burney 86, folio 3 verso"
+        ]
+    },
+    "height": 5905,
+    "width": 4596,
+ 
+    "items": [
+        {
+            "id": "annotations/3v",
+            "type": "AnnotationPage",
+            "items": [
+                {
+                "id": "annotations/3v",
+                "type": "Annotation",
+                "motivation": "painting",
+                "body": {
+                    "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f003v.tif/full/2000,/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "height": 5905,
+                    "width": 4596
+                },
+                "target": "canvases/3v",
+                "service": [
+                    {
+                        "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f003v.tif",
+                        "profile": "level1",
+                        "type": "ImageService2"
+                    }
+                ]
+                }
+            ]
+        }
+        ]
+    }
+, {
+    "id": "canvases/4r",
+    "type": "Canvas",
+    "label": {
+        "en": [
+            "British Library, Burney 86, folio 4 recto"
+        ]
+    },
+    "height": 6266,
+    "width": 4829,
+ 
+    "items": [
+        {
+            "id": "annotations/4r",
+            "type": "AnnotationPage",
+            "items": [
+                {
+                "id": "annotations/4r",
+                "type": "Annotation",
+                "motivation": "painting",
+                "body": {
+                    "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f004r.tif/full/2000,/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "height": 6266,
+                    "width": 4829
+                },
+                "target": "canvases/4r",
+                "service": [
+                    {
+                        "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f004r.tif",
+                        "profile": "level1",
+                        "type": "ImageService2"
+                    }
+                ]
+                }
+            ]
+        }
+        ]
+    }
+, {
+    "id": "canvases/4v",
+    "type": "Canvas",
+    "label": {
+        "en": [
+            "British Library, Burney 86, folio 4 verso"
+        ]
+    },
+    "height": 5905,
+    "width": 4596,
+ 
+    "items": [
+        {
+            "id": "annotations/4v",
+            "type": "AnnotationPage",
+            "items": [
+                {
+                "id": "annotations/4v",
+                "type": "Annotation",
+                "motivation": "painting",
+                "body": {
+                    "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f004v.tif/full/2000,/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "height": 5905,
+                    "width": 4596
+                },
+                "target": "canvases/4v",
+                "service": [
+                    {
+                        "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f004v.tif",
+                        "profile": "level1",
+                        "type": "ImageService2"
+                    }
+                ]
+                }
+            ]
+        }
+        ]
+    }
+, {
+    "id": "canvases/5r",
+    "type": "Canvas",
+    "label": {
+        "en": [
+            "British Library, Burney 86, folio 5 recto"
+        ]
+    },
+    "height": 6266,
+    "width": 4798,
+ 
+    "items": [
+        {
+            "id": "annotations/5r",
+            "type": "AnnotationPage",
+            "items": [
+                {
+                "id": "annotations/5r",
+                "type": "Annotation",
+                "motivation": "painting",
+                "body": {
+                    "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f005r.tif/full/2000,/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "height": 6266,
+                    "width": 4798
+                },
+                "target": "canvases/5r",
+                "service": [
+                    {
+                        "id": "http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebl/burney86imgs/v1/burney_ms_86_f005r.tif",
+                        "profile": "level1",
+                        "type": "ImageService2"
+                    }
+                ]
+                }
+            ]
+        }
+        ]
+    }
+ ] }

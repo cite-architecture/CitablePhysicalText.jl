@@ -1,5 +1,6 @@
 ---
 title: Tutorials
+engine: julia
 ---
 
 Try one of these tutorials to start learning `CitablePhysicalText.jl`.
@@ -27,6 +28,8 @@ Try one of these tutorials to start learning `CitablePhysicalText.jl`.
 **Specialized types**
 
 [Codices and pages](./codex.qmd)
+
+[Generate IIIF Manifests for a codex](./iiif.qmd)
 
 :::
 

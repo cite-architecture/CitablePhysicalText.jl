@@ -1,3 +1,7 @@
+---
+engine: julia
+---
+
 # Manuscripts and pages
 
 ```{julia}
