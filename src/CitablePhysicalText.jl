@@ -1,6 +1,7 @@
 module CitablePhysicalText
 
 using Documenter, DocStringExtensions
+using Downloads
 
 using SplitApplyCombine
 
@@ -34,6 +35,8 @@ import CitableBase: fromcex
 using CitableText, CitableObject
 using CitableObject.CexUtils
 using CiteEXchange
+
+using CitableImage
 
 using JSON
 

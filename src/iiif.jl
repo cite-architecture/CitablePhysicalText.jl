@@ -1,3 +1,5 @@
+"""Information needed to compose a IIIF Presentation Manifest.
+"""
 struct IIIFConfig
     manifest_id
     canvas_id_base
@@ -5,95 +7,95 @@ struct IIIFConfig
     annotation_id_base
     image_extension
     labels_lang
-    
 end
-#=
-Things we need:
-
-1. an id like this: https://shot.holycross.edu/iiif/complutensian-bne/manifest.json
-
-(ie, really it's a URL)
-
-2. for each page, its dimensions.  How do we get that?  Maybe a parallel vector of dimensions?
-
-3. URLs for canvas objects
-
-4.  URLs for annotation page objects
-
-5. a format for the image (MIME like image/jpeg)
-
-6. an actual URL for the image in IIIF parlance  (ends "full/full/0/default.jpg")
-
-{scheme}://{server}{/prefix}/{identifier}/info.json
 
 
-Majnifest id: https://shot.holycross.edu/iiif/complutensian-bne/manifest.json
+"""Derive an IIIF identifier from an image URN and an IIIF service.
+$(SIGNATURES)
+"""
+function iiif_image_id(imgurn::Cite2Urn, svc::IIIFservice)
+    string(svc.baseurl,"?IIIF=",svc.directoryroot, "/", CitableImage.subdirectory(imgurn), "/", objectcomponent(dropsubref(imgurn)))
+end
 
-Canves ID base: http://shot.holycross.edu/complutensiancanvases/bne/v1/
+"""Read an IIIF info request (`info.json`)  from a given IIIF service for the image illustrating a codex page.
+$(SIGNATURES)
+"""
+function imageinfo(pg::MSPage, svc::IIIFservice)
+    imageinfo(pg.image, svc)
+end
 
-Page ID base: http://shot.holycross.edu/complutensianpages/bne/v1
+"""Read an IIIF info request (`info.json`) for an image URN on a given IIIF service.
+$(SIGNATURES)
+"""
+function imageinfo(imgurn::Cite2Urn, svc::IIIFservice; extension = "tif")
+    infourl = string(svc.baseurl,"?IIIF=",svc.directoryroot, "/", CitableImage.subdirectory(imgurn), "/", objectcomponent(dropsubref(imgurn)), ".$(extension)/info.json")
+     f = Downloads.download(infourl)
+     jsoninfo = read(f, String)
+     rm(f)
+     jsoninfo
+end
 
-Annotation ID base: http://shot.holycross.edu/complutensianannotations/bne/vv1
+"""Compose the IIIF manifest entry for a single page of a codex. In IIIF, this is represented by a Canvas, containing an AnnotationPage, in turn containing an Annotation to paint the Canvas.
+$(SIGNATURES)
+"""
+function pagemanifest(pg::MSPage, conf::IIIFConfig, svc::IIIFservice; srcextension = "tif")
 
-Image base: https://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom
+    pgid =  objectcomponent(pg.urn)
+    imgid = iiif_image_id(pg.image, svc)
+    pginfo = imageinfo(pg.image, svc) |> JSON.parse
+    h = pginfo["height"]
+    w = pginfo["width"]
 
-
-https://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebne/complutensian/v1/v1p1.tif/info.json
-
-
-https://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebne/complutensian/v1/v1p1.tif/info.json
-
-=#
-
-
-#=
-Support this:
-{
-  "@context" : "http://iiif.io/api/image/2/context.json",
-  "@id" : "https://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/citebne/complutensian/v1/v1p1.tif",
-  "protocol" : "http://iiif.io/api/image",
-  "width" : 2250,
-  "height" : 1421,
-  "sizes" : [
-     { "width" : 140, "height" : 88 },
-     { "width" : 281, "height" : 177 },
-     { "width" : 562, "height" : 355 },
-     { "width" : 1125, "height" : 710 }
-  ],
-  "tiles" : [
-     { "width" : 256, "height" : 256, "scaleFactors" : [ 1, 2, 4, 8, 16 ] }
-  ],
-  "profile" : [
-     "http://iiif.io/api/image/2/level1.json",
-     { "formats" : [ "jpg" ],
-       "qualities" : [ "native","color","gray" ],
-       "supports" : ["regionByPct","sizeByForcedWh","sizeByWh","sizeAboveFull","rotationBy90s","mirroring","gray"] }
-  ]
-}
-
-=#
-
-
-function pagemanifest(pg, conf::IIIFConfig)
-   x =  """{
-        "id": "http://shot.holycross.edu/complutensiancanvases/bne/v1/img1",
+    jsontext = """{
+        "id": "$(conf.canvas_id_base)$(pgid)",
         "type": "Canvas",
         "label": {
-            "en": [
-                "Volume 1, image 1"
+            "$(conf.labels_lang)": [
+                "$(label(pg))"
+            ]
+        },
+        "height": $(h),
+        "width": $(w),
+     
+        "items": [
+            {
+                "id": "$(conf.annotation_id_base)$(pgid)",
+                "type": "AnnotationPage",
+                "items": [
+                    {
+                    "id": "$(conf.annotation_id_base)$(pgid)",
+                    "type": "Annotation",
+                    "motivation": "painting",
+                    "body": {
+                        "id": "$(url(pg.image, svc))",
+                        "type": "Image",
+                        "format": "image/jpeg",
+                        "height": $(h),
+                        "width": $(w)
+                    },
+                    "target": "$(conf.canvas_id_base)$(pgid)",
+                    "service": [
+                        {
+                            "id": "$(imgid).$(srcextension)",
+                            "profile": "level1",
+                            "type": "ImageService2"
+                        }
+                    ]
+                    }
+                ]
+            }
             ]
         }
     """
-
-    val = """{
-        "id": "http://shot.holycross.edu/complutensiancanvases/bne/v1/img1"
-        }"""
-    val
+    jsontext
 end
-# canvas: http://shot.holycross.edu/complutensiancanvases/bne/v1/img1
-# page: 
-# 
-function iiifmanifest(c::Codex, conf::IIIFConfig)
+
+
+
+"""Compose a complete IIIF presentation manifest for a codex collection.
+$(SIGNATURES)
+"""
+function iiifmanifest(c::Codex, conf::IIIFConfig, svc::IIIFservice)
     lbl = label(c)
 
 
@@ -112,17 +114,19 @@ function iiifmanifest(c::Codex, conf::IIIFConfig)
      
     ]
 
+    pagelist = []
+    for pg in c.pages
+        push!(pagelist, pagemanifest(pg, conf,svc))
+    end
 
-
-
-    push!(jsonlines, pagemanifest(c.pages[1], conf))
+    push!(jsonlines, join(pagelist, ", "))
         
 
     # Close items:
     push!(jsonlines, "]")
     # Close structure:
     push!(jsonlines, "}")
-    
+    # Return a string:
     join(jsonlines," ")
 end
 
