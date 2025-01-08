@@ -22,7 +22,8 @@ function iiifconfig(manifest_id;
     page_id_base = "pages/", 
     annotation_id_base = "annotations/",
     image_extension = "tif", 
-    labels_lang = "en")
+    labels_lang = "en"
+    )
 
     IIIFConfig(manifest_id, canvas_id_base, page_id_base,  annotation_id_base, image_extension,labels_lang)
 end
@@ -112,7 +113,8 @@ end
 """Compose a complete IIIF presentation manifest for a codex collection.
 $(SIGNATURES)
 """
-function iiifmanifest(c::Codex, conf::IIIFConfig, svc::IIIFservice)
+function iiifmanifest(c::Codex, conf::IIIFConfig, svc::IIIFservice; 
+    interval = 10)
     lbl = label(c)
 
     jsonlines = [
@@ -131,7 +133,11 @@ function iiifmanifest(c::Codex, conf::IIIFConfig, svc::IIIFservice)
     ]
 
     pagelist = []
-    for pg in c.pages
+    max = length(c.pages)
+    for (i,pg) in enumerate(c.pages)
+        if mod(i, interval) == 0
+            @info("Page $(i)/$(max)")
+        end
         push!(pagelist, pagemanifest(pg, conf,svc))
     end
 
