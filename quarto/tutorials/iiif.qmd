@@ -84,6 +84,13 @@ With these parameters defined, we can get the JSON text of a manifest for our co
 manifestjson = iiifmanifest(ms, conf, imgsvc)
 ```
 
+
+::: {.callout-warning}
+When the manifest is composed, the image for each page is tested by querying the IIIF server to get the image's dimensions. For a long manuscript or book, this can take some time, especially if the connection to the server is not fast.
+
+You can, however, be sure that every entry in the manifest describes a legitimate image on the configured server.
+:::
+
 ### Publishing and using the manifest
 
 Now all we need to do is serve the text on the internet, preferably with support for COR.  Github can do this for us: we'll write the output to the same directory where we kept our source data for the codex.
